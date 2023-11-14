@@ -1,0 +1,10 @@
+{
+    "name": "duan1/nhom6",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Duan1\\Nhom6\\": "src/"
+        }
+    },
+    "require": {}
+}
