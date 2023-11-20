@@ -1,20 +1,21 @@
 <?php
 
 use Duan1\Nhom6\Controllers\Admin\UserController;
-use Duan1\Nhom6\Controllers\Admin\CategoryController;
+use Duan1\Nhom6\Controllers\Admin\DashboardController;
 use Duan1\Nhom6\Controllers\Client\HomeController;
 use Duan1\Nhom6\Router;
 
 $router = new Router();
 
-$router->addRoute('/', HomeController::class, 'index');
+$router->addRoute('/', HomeController::class, 'home');
+$router->addRoute('/rooms', HomeController::class, 'rooms');
+$router->addRoute('/facilities', HomeController::class, 'facilities');
+$router->addRoute('/about', HomeController::class, 'about');
+$router->addRoute('/contact', HomeController::class, 'contact');
 
-$router->addRoute('/admin/users', UserController::class, 'index');
-$router->addRoute('/admin/users/create', UserController::class, 'create');
-$router->addRoute('/admin/users/update', UserController::class, 'update');
-$router->addRoute('/admin/users/delete', UserController::class, 'delete');
+$router->addRoute('/admin/dashboard', DashboardController::class, 'index');
+$router->addRoute('/admin/rooms', DashboardController::class, 'rooms');
+$router->addRoute('/admin/features_facilities', DashboardController::class, 'features_facilities');
+$router->addRoute('/admin/user_queries', DashboardController::class, 'features_facilities');
 
-$router->addRoute('/admin/categories', CategoryController::class, 'index');
-$router->addRoute('/admin/categories/create', CategoryController::class, 'create');
-$router->addRoute('/admin/categories/update', CategoryController::class, 'update');
-$router->addRoute('/admin/categories/delete', CategoryController::class, 'delete');
+$router->addRoute('/admin', UserController::class, 'index');
