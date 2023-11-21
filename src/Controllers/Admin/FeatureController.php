@@ -36,5 +36,26 @@
     
             header('Location: /admin/features');
         }
+
+        public function update() {
+            
+            if (isset($_POST["update_feature"])) { 
+                $data = [
+                    'name' => $_POST['feature_name']
+                ];
+                
+                $id = $_POST['feature_id'];
+
+                $conditions = [
+                    ['id', '=', $id],
+                ];
+                
+                (new Feature())->update($data, $conditions);
+            }
+
+            $features = (new Feature)->all();
+    
+            $this->renderAdmin('features', ['features' => $features]);
+        }    
     }
 ?>

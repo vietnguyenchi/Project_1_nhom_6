@@ -26,6 +26,7 @@ $router->addRoute('/admin/users', UserController::class, 'index');
 // Feature
 $router->addRoute('/admin/features', FeatureController::class, 'index');
 $router->addRoute('/admin/features', FeatureController::class, 'add');
+$router->addRoute('/admin/features', FeatureController::class, 'update');
 $router->addRoute('/admin/features/delete', FeatureController::class, 'delete');
 
 // Facilities
