@@ -1,7 +1,10 @@
 <?php
 
+use Duan1\Nhom6\Controllers\Admin\RoomController;
 use Duan1\Nhom6\Controllers\Admin\UserController;
 use Duan1\Nhom6\Controllers\Admin\DashboardController;
+use Duan1\Nhom6\Controllers\Admin\FacilityController;
+use Duan1\Nhom6\Controllers\Admin\FeatureController;
 use Duan1\Nhom6\Controllers\Client\HomeController;
 use Duan1\Nhom6\Router;
 
@@ -19,3 +22,14 @@ $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
 // Users
 $router->addRoute('/admin/users', UserController::class, 'index');
+
+// Feature
+$router->addRoute('/admin/features', FeatureController::class, 'index');
+$router->addRoute('/admin/features', FeatureController::class, 'add');
+$router->addRoute('/admin/features/delete', FeatureController::class, 'delete');
+
+// Facilities
+$router->addRoute('/admin/facilities', FacilityController::class, 'index');
+
+// Room
+$router->addRoute('/admin/rooms', RoomController::class, 'index');

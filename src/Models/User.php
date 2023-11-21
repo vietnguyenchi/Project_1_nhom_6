@@ -9,6 +9,8 @@ class User extends Model {
     protected $columns = [
         'name',
         'password',
-        'email'
+        'email',
+        'phone',
+        'address'
     ];
 }

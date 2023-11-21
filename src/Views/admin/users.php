@@ -16,7 +16,7 @@
                                     <th class="bg-dark text-white" scope="col" width="20%">Email</th>
                                     <th class="bg-dark text-white" scope="col">Address</th>
                                     <th class="bg-dark text-white" scope="col">Phone</th>
-                                    <th class="bg-dark text-white" scope="col" width="15%">Action</th>
+                                    <th class="bg-dark text-white" scope="col" width="10%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -29,7 +29,7 @@
                                         <td><?= $user['address'] ?></td>
                                         <td><?= $user['phone'] ?></td>
                                         <td>
-                                            <button class="btn btn-success btn-sm shadow-none">
+                                            <button class="btn btn-success btn-sm shadow-none d-block mb-1">
                                                 <i class="bi bi-pencil me-1"></i>Edit
                                             </button>
                                             <button class="btn btn-danger btn-sm shadow-none">

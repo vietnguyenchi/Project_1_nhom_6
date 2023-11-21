@@ -21,7 +21,10 @@
                         <a class="nav-link text-white" href="rooms">Rooms</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="features_facilities">Features & Facilities</a>
+                        <a class="nav-link text-white" href="features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="facilities">Facilities</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="users">Users</a>

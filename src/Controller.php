@@ -3,12 +3,6 @@
 namespace Duan1\Nhom6;
 
 class Controller {
-    // protected function renderData($view, $data = []) {
-    //     extract($data);
-
-    //     include "Views/$view.php";
-    // }
-
     protected function render($view, $data = []) {
         $data['view'] = $view;
 

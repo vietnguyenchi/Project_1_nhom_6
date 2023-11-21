@@ -15,7 +15,7 @@
                                     <th class="bg-dark text-white" scope="col">Subject</th>
                                     <th class="bg-dark text-white" scope="col" width="30%">Message</th>
                                     <th class="bg-dark text-white" scope="col">Date</th>
-                                    <th class="bg-dark text-white" scope="col">Action</th>
+                                    <th class="bg-dark text-white" scope="col" width="10%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
