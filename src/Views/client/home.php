@@ -42,17 +42,19 @@
                     <div class="col-lg-3 mb-3">
                         <label class="form-label" style="font-weight: 500">Adult</label>
                         <select class="form-select shadow-none">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="0" selected></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
                         </select>
                     </div>
                     <div class="col-lg-2 mb-3">
                         <label class="form-label" style="font-weight: 500">Children</label>
                         <select class="form-select shadow-none">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="0" selected></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
                         </select>
                     </div>
                     <div class="col-lg-1 mb-lg-3 mt-2">
