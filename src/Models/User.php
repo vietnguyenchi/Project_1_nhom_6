@@ -8,8 +8,7 @@ class User extends Model {
     protected $table = 'users';
     protected $columns = [
         'name',
-        'email',
-        'address',
         'password',
+        'email'
     ];
 }

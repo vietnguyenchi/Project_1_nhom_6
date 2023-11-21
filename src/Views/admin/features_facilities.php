@@ -15,7 +15,7 @@
 
                     <div class="modal fade" id="feature-s" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                            <form id="feature_s_form">
+                            <form id="feature_s_form" method="POST">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title">Add Feature</h5>
@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary shadow-none" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                        <button type="button" class="btn custom-bg text-white shadow-none" name="add_feature">SUBMIT</button>
                                     </div>
                                 </div>
                             </form>
@@ -45,19 +45,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Balcony</td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm shadow-none">
-                                            <i class="bi bi-pencil me-1"></i>Edit
-                                        </button>
-                                        <button class="btn btn-danger btn-sm shadow-none">
-                                            <i class="bi bi-trash me-1"></i>Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
+                                <?php foreach($features as $feature) : ?>
+                                    <tr>
+                                        <td><?= $feature['id'] ?></td>
+                                        <td><?= $feature['name'] ?></td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm shadow-none">
+                                                <i class="bi bi-pencil me-1"></i>Edit
+                                            </button>
+                                            <button class="btn btn-danger btn-sm shadow-none">
+                                                <i class="bi bi-trash me-1"></i>Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                <!-- <tr>
                                     <td>2</td>
                                     <td>Badroom</td>
                                     <td>
@@ -80,7 +82,7 @@
                                             <i class="bi bi-trash me-1"></i>Delete
                                         </button>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>

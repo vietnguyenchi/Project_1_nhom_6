@@ -24,6 +24,9 @@
                         <a class="nav-link text-white" href="features_facilities">Features & Facilities</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="users">Users</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="user_queries">User Queries</a>
                     </li>
                     <li class="nav-item">
