@@ -6,3 +6,4 @@
     3.1. Di chuyển vào trong dự án: ```nhom-6```
     3.2. Chạy lệnh: ```composer update```
     3.3. Chạy lệnh: ```composer du`
+4. Start Laragon -> chuột phải -> www -> nhom-6
