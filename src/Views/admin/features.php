@@ -16,7 +16,7 @@
                     <div class="modal fade" id="feature-s" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
-                            <form method="POST">
+                            <form id="feature_s_form" method="POST">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title">Add Feature</h5>
@@ -24,8 +24,7 @@
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label class="form-label fw-bold">Name</label>
-                                            <input type="text" name="feature_name" class="form-control shadow-none"
-                                                required>
+                                            <input type="text" name="feature_name" class="form-control shadow-none" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -68,6 +67,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <!-- Mỗi một bản ghi đều có 1 cửa sổ popup update riêng -->
                                     <div class="modal fade" id="feature<?= $feature['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <form method="POST">
@@ -79,9 +79,7 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold">Name</label>
                                                             <input type="hidden" name="feature_id" value="<?= $feature['id'] ?>">
-                                                            <input type="text" name="feature_name"
-                                                                class="form-control shadow-none"
-                                                                value="<?= $feature['name'] ?>" required>
+                                                            <input type="text" name="name_update" class="form-control shadow-none" value="<?= $feature['name'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">

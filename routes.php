@@ -24,10 +24,8 @@ $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/users', UserController::class, 'index');
 
 // Feature
-$router->addRoute('/admin/features', FeatureController::class, 'index');
-$router->addRoute('/admin/features', FeatureController::class, 'add');
-$router->addRoute('/admin/features', FeatureController::class, 'update');
-$router->addRoute('/admin/features/delete', FeatureController::class, 'delete');
+$router->addRoute('/admin/features', FeatureController::class, 'index'); //Gọi hàm index
+$router->addRoute('/admin/features/delete', FeatureController::class, 'delete'); // Gọi hàm delete
 
 // Facilities
 $router->addRoute('/admin/facilities', FacilityController::class, 'index');
