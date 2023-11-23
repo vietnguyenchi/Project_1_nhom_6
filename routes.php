@@ -1,20 +1,34 @@
 <?php
 
+use Duan1\Nhom6\Controllers\Admin\RoomController;
 use Duan1\Nhom6\Controllers\Admin\UserController;
-use Duan1\Nhom6\Controllers\Admin\CategoryController;
+use Duan1\Nhom6\Controllers\Admin\DashboardController;
+use Duan1\Nhom6\Controllers\Admin\FacilityController;
+use Duan1\Nhom6\Controllers\Admin\FeatureController;
 use Duan1\Nhom6\Controllers\Client\HomeController;
 use Duan1\Nhom6\Router;
 
 $router = new Router();
 
-$router->addRoute('/', HomeController::class, 'index');
+// Client
+$router->addRoute('/', HomeController::class, 'home');
+$router->addRoute('/rooms', HomeController::class, 'rooms');
+$router->addRoute('/facilities', HomeController::class, 'facilities');
+$router->addRoute('/about', HomeController::class, 'about');
+$router->addRoute('/contact', HomeController::class, 'contact');
 
+// Dasdboard
+$router->addRoute('/admin/dashboard', DashboardController::class, 'index');
+
+// Users
 $router->addRoute('/admin/users', UserController::class, 'index');
-$router->addRoute('/admin/users/create', UserController::class, 'create');
-$router->addRoute('/admin/users/update', UserController::class, 'update');
-$router->addRoute('/admin/users/delete', UserController::class, 'delete');
 
-$router->addRoute('/admin/categories', CategoryController::class, 'index');
-$router->addRoute('/admin/categories/create', CategoryController::class, 'create');
-$router->addRoute('/admin/categories/update', CategoryController::class, 'update');
-$router->addRoute('/admin/categories/delete', CategoryController::class, 'delete');
+// Feature
+$router->addRoute('/admin/features', FeatureController::class, 'index'); //Gọi hàm index
+$router->addRoute('/admin/features/delete', FeatureController::class, 'delete'); // Gọi hàm delete
+
+// Facilities
+$router->addRoute('/admin/facilities', FacilityController::class, 'index');
+
+// Room
+$router->addRoute('/admin/rooms', RoomController::class, 'index');

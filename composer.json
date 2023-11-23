@@ -4,7 +4,10 @@
     "autoload": {
         "psr-4": {
             "Duan1\\Nhom6\\": "src/"
-        }
+        },
+        "files": [
+            "global.php"
+        ]
     },
     "require": {}
 }
