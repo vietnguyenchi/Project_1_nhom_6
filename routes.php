@@ -29,6 +29,7 @@ $router->addRoute('/admin/features/delete', FeatureController::class, 'delete');
 
 // Facilities
 $router->addRoute('/admin/facilities', FacilityController::class, 'index');
+$router->addRoute('/admin/facilities/delete', FacilityController::class, 'delete');
 
 // Room
 $router->addRoute('/admin/rooms', RoomController::class, 'index');

@@ -7,13 +7,15 @@
                 <div class="card-body">
 
                     <div class="text-end mb-4">
-                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#add-room-s">
+                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#add-room-s">
                             <i class="bi bi-plus-square me-1"></i>Add
                         </button>
                     </div>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="add-room-s" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="add-room-s" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <form id="add_room_form" autocomplete="off">
                                 <div class="modal-content">
@@ -51,19 +53,22 @@
                                                 <div class="row w-100">
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Bedroom
                                                         </label>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Balcony
                                                         </label>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Kitchen
                                                         </label>
                                                     </div>
@@ -74,37 +79,43 @@
                                                 <div class="row w-100">
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Wifi
                                                         </label>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Air conditioner
                                                         </label>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Televition
                                                         </label>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Geyser
                                                         </label>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Spa
                                                         </label>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <label>
-                                                            <input type="checkbox" value="1" class="form-check-input shadow-none">
+                                                            <input type="checkbox" value="1"
+                                                                class="form-check-input shadow-none">
                                                             Room Heater
                                                         </label>
                                                     </div>
@@ -117,8 +128,10 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary shadow-none" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                        <button type="button" class="btn btn-secondary shadow-none"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button"
+                                            class="btn custom-bg text-white shadow-none">SUBMIT</button>
                                     </div>
                                 </div>
                             </form>
@@ -132,19 +145,17 @@
                                 <tr>
                                     <th class="bg-dark text-white" scope="col" width="5%">#</th>
                                     <th class="bg-dark text-white" scope="col">Name</th>
-                                    <th class="bg-dark text-white" scope="col">Area</th>
                                     <th class="bg-dark text-white" scope="col">Guests</th>
                                     <th class="bg-dark text-white" scope="col">Price</th>
                                     <th class="bg-dark text-white" scope="col">Quantity</th>
                                     <th class="bg-dark text-white" scope="col" width="17%">Status</th>
-                                    <th class="bg-dark text-white" scope="col" width="15%">Action</th>
+                                    <th class="bg-dark text-white" scope="col" width="12%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="align-middle">
                                     <td>1</td>
                                     <td>Simple room</td>
-                                    <td>F203</td>
                                     <td>
                                         <span class="badge rounded-pill bg-light text-dark">
                                             Adult: 8
@@ -162,43 +173,74 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <button class="btn btn-success btn-sm shadow-none">
-                                            <i class="bi bi-pencil me-1"></i>Edit
+                                        <button class="btn btn-primary btn-sm shadow-none">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </button>
+                                        <button class="btn btn-info btn-sm shadow-none" data-bs-toggle="modal"
+                                            data-bs-target="#add_image">
+                                            <i class="bi bi-image"></i>
                                         </button>
                                         <button class="btn btn-danger btn-sm shadow-none">
-                                            <i class="bi bi-trash me-1"></i>Delete
+                                            <i class="bi bi-trash"></i>
                                         </button>
                                     </td>
                                 </tr>
-                                <tr class="align-middle">
-                                    <td>2</td>
-                                    <td>Luxury room</td>
-                                    <td>P210</td>
-                                    <td>
-                                        <span class="badge rounded-pill bg-light text-dark">
-                                            Adult: 8
-                                        </span> <br>
-                                        <span class="badge rounded-pill bg-light text-dark">
-                                            Children: 3
-                                        </span>
-                                    </td>
-                                    <td>$1000</td>
-                                    <td>10</td>
-                                    <td>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Active</option>
-                                            <option value="1">Inactive</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm shadow-none">
-                                            <i class="bi bi-pencil me-1"></i>Edit
-                                        </button>
-                                        <button class="btn btn-danger btn-sm shadow-none">
-                                            <i class="bi bi-trash me-1"></i>Delete
-                                        </button>
-                                    </td>
-                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="add_image" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Images</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="row d-flex align-items-end w-100">
+                                                        <div class="col-11">
+                                                            <label>Add Image</label>
+                                                            <input type="file" accept=".jpg, .png, .webp, .jpeg"
+                                                                class="form-control shadow-none mt-1" required>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <button type="button"
+                                                                class="btn custom-bg text-white shadow-none">ADD</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="container-fluid table table-hover mt-3"
+                                                    style="height: 350px; overflow-y: scroll">
+                                                    <div
+                                                        class="row border border-dark p-2 text-center text-white bg-dark fw-bold">
+                                                        <div class="col-lg-6">Image</div>
+                                                        <div class="col-lg-3 text-center">Thumb</div>
+                                                        <div class="col-lg-3 text-center">Delete</div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-lg-6 ps-0">
+                                                            <img src="../../../assets/images/rooms/1.jpg"
+                                                                class="img-fluid p-0">
+                                                        </div>
+                                                        <div class="col-lg-3 text-center">Image</div>
+                                                        <button type="button" class="btn btn-danger btn-sm shadow-none">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                        <!-- <div class="col-lg-3 text-center">
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button"
+                                                    class="btn custom-bg text-white shadow-none">Save</button>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
                             </tbody>
                         </table>
                     </div>

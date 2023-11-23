@@ -62,7 +62,7 @@
                                                 <i class="bi bi-pencil me-1"></i>Edit
                                             </button>
                                             <a href="/admin/features/delete?id=<?= $feature['id'] ?>"
-                                                class="btn btn-danger btn-sm shadow-none">
+                                                class="btn btn-danger btn-sm shadow-none" onclick="return confirm('Bạn có chắc chắn xóa?');">
                                                 <i class="bi bi-trash me-1"></i>Delete
                                             </a>
                                         </td>
