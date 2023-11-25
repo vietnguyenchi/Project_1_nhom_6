@@ -210,41 +210,78 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                                <div class="container-fluid table table-hover mt-3"
+                                                <div class="container-fluid mt-3"
                                                     style="height: 350px; overflow-y: scroll">
-                                                    <div
-                                                        class="row border border-dark p-2 text-center text-white bg-dark fw-bold">
+                                                    <div class="row border border-dark p-2 text-center text-white bg-dark fw-bold">
                                                         <div class="col-lg-6">Image</div>
                                                         <div class="col-lg-3 text-center">Thumb</div>
                                                         <div class="col-lg-3 text-center">Delete</div>
                                                     </div>
-                                                    <div class="row mt-2">
+                                                    <div class="row d-flex align-items-center mt-2">
                                                         <div class="col-lg-6 ps-0">
                                                             <img src="../../../assets/images/rooms/1.jpg"
                                                                 class="img-fluid p-0">
                                                         </div>
-                                                        <div class="col-lg-3 text-center">Image</div>
-                                                        <button type="button" class="btn btn-danger btn-sm shadow-none">
-                                                            <i class="bi bi-trash"></i>
-                                                        </button>
-                                                        <!-- <div class="col-lg-3 text-center">
-                                                        </div> -->
+                                                        <div class="col-lg-3 text-center">
+                                                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                                            <label class="btn btn-outline-secondary py-0 px-1" for="btncheck1">
+                                                                <i class="bi bi-check-lg"></i>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-lg-3 text-center">
+                                                            <a href="#" class="btn btn-danger btn-sm shadow-none">
+                                                                <i class="bi bi-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row d-flex align-items-center mt-2">
+                                                        <div class="col-lg-6 ps-0">
+                                                            <img src="../../../assets/images/rooms/IMG_11892.png"
+                                                                class="img-fluid p-0">
+                                                        </div>
+                                                        <div class="col-lg-3 text-center">
+                                                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                                            <label class="btn btn-outline-secondary py-0 px-1" for="btncheck1">
+                                                                <i class="bi bi-check-lg"></i>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-lg-3 text-center">
+                                                            <a href="#" class="btn btn-danger btn-sm shadow-none">
+                                                                <i class="bi bi-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row d-flex align-items-center mt-2">
+                                                        <div class="col-lg-6 ps-0">
+                                                            <img src="../../../assets/images/rooms/IMG_39782.png"
+                                                                class="img-fluid p-0">
+                                                        </div>
+                                                        <div class="col-lg-3 text-center">
+                                                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                                            <label class="btn btn-outline-secondary py-0 px-1" for="btncheck1">
+                                                                <i class="bi bi-check-lg"></i>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-lg-3 text-center">
+                                                            <a href="#" class="btn btn-danger btn-sm shadow-none">
+                                                                <i class="bi bi-trash"></i>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="modal-footer">
+                                            <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="button"
                                                     class="btn custom-bg text-white shadow-none">Save</button>
-                                            </div> -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -65,7 +65,7 @@
                         <img src="assets/images/rooms/1.jpg" class="img-fluid rounded">
                     </div>
                     <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                        <h5 class="mb-1">Simple Room Name</h5>
+                        <h5 class="mb-1 fw-semibold">Simple Room Name</h5>
                         <div class="features mb-3">
                             <h6 class="mb-1">Features</h6>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base">
@@ -119,7 +119,7 @@
                         <img src="assets/images/rooms/IMG_11892.png" class="img-fluid rounded">
                     </div>
                     <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                        <h5 class="mb-1">Simple Room Name</h5>
+                        <h5 class="mb-1 fw-semibold">Simple Room Name</h5>
                         <div class="features mb-3">
                             <h6 class="mb-1">Features</h6>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base">
@@ -167,13 +167,13 @@
                     </div>
                 </div>
             </div>
-            <div class="card mb-4 border-0 shadow">0
+            <div class="card mb-4 border-0 shadow">
                 <div class="row g-0 p-3 align-items-center">
                     <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
                         <img src="assets/images/rooms/IMG_39782.png" class="img-fluid rounded">
                     </div>
                     <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                        <h5 class="mb-1">Simple Room Name</h5>
+                        <h5 class="mb-1 fw-semibold">Simple Room Name</h5>
                         <div class="features mb-3">
                             <h6 class="mb-1">Features</h6>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base">

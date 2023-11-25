@@ -31,7 +31,7 @@
           </div>
       </div>
   </div>
-  <h6 class="text-center bg-dark text-white p-3 m-0">Designed and Developed by Nhom6-WD8342</h6>
+  <h6 class="text-center bg-dark text-white p-3 m-0">Designed and Developed by Nhom6-WD18342</h6>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

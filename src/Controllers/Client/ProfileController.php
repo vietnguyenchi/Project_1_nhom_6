@@ -3,19 +3,19 @@
 namespace Duan1\Nhom6\Controllers\Client;
 
 use Duan1\Nhom6\Controller;
-
 use Duan1\Nhom6\Model;
 use Duan1\Nhom6\Models\User;
 
 
-
-class HomeController extends Controller
+class ProfileController extends Controller
 {
-    public function home() {
-      
+    
+    public function profile() {
+
         (new Model())->login();
         (new User())->register();
-      
-        $this->render('home',);
+
+        $this->render('profile');
     }
+
 }
