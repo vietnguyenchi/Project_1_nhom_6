@@ -33,7 +33,7 @@
         effect: "fade",
         loop: true,
         autoplay: {
-            delay: 3500,
+            delay: 3000,
             disableOnInteraction: false,
         },
     });

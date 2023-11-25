@@ -157,6 +157,76 @@ class Model
         $stmt->execute();
     }
 
+    public function findUser($data, $password)
+    {
+        if (filter_var($data, FILTER_VALIDATE_EMAIL)) {
+            $sql = "SELECT * FROM users WHERE email = '$data' AND password = '$password' LIMIT 1";
+        } else {
+            $sql = "SELECT * FROM users WHERE phone = '$data' AND password = '$password' LIMIT 1";
+        }
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
+
+    public function checkExistAccount($type, $data) {
+        $sql = "SELECT * FROM users WHERE $type = '$data'";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
+
+    public function login()
+    {
+        if (isset($_POST['login'])) {
+            $data = (new Model())->findUser($_POST['phone_email'], $_POST['password']);
+            if ($data != '') {
+                if (filter_var($data, FILTER_VALIDATE_EMAIL)) {
+                    $_SESSION['email'] = $data['email'];
+                    $_SESSION['name'] = $data['name'];
+                } else {
+                    $_SESSION['phone'] = $data['phone'];
+                    $_SESSION['name'] = $data['name'];
+                }
+
+                (new Model())->alert('success', 'Logged in successfully');
+
+            } else {
+                (new Model())->alert('error', 'Login failed');
+            }
+        }
+    }
+
+    public function alert($type, $smg)
+    {
+
+        $bs_class = ($type == "success") ? "alert-success" : "alert-danger";
+
+        echo <<<alert
+            <div class="alert $bs_class alert-dismissible fade show custom-alert" role="alert">
+                <strong class="me-3">$smg</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        alert;
+    }
+
+
+    public function logout()
+    {
+        session_destroy();
+        header('Location: /');
+    }
+
     public function __destruct()
     {
         $this->conn = null;

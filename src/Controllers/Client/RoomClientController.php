@@ -7,11 +7,15 @@ use Duan1\Nhom6\Model;
 use Duan1\Nhom6\Models\User;
 
 
-class HomeController extends Controller
+class RoomClientController extends Controller
 {
-    public function home() {
+    public function rooms() {
+
         (new Model())->login();
+        
         (new User())->register();
-        $this->render('home',);
+
+        $this->render('rooms');
     }
+    
 }

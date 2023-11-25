@@ -1,6 +1,7 @@
 <?php
 
 namespace Duan1\Nhom6;
+use Duan1\Nhom6\Model;
 
 class Controller {
     protected function render($view, $data = []) {
