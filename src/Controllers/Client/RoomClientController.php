@@ -11,7 +11,7 @@ class RoomClientController extends Controller
 {
     public function rooms() {
 
-        (new Model())->login();
+        (new User())->login();
         
         (new User())->register();
 

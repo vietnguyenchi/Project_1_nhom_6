@@ -11,7 +11,7 @@ class FacilityClientController extends Controller
 {
     public function facilities() {
 
-        (new Model())->login();
+        (new User())->login();
 
         (new User())->register();
         

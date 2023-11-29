@@ -4,19 +4,18 @@ namespace Duan1\Nhom6\Controllers\Admin;
 
 use Duan1\Nhom6\Controller;
 use Duan1\Nhom6\Models\User;
+use Duan1\Nhom6\Models\Role;
+use Duan1\Nhom6\Models\AccountStatus;
 
 class UserController extends Controller
 {
-    /*
-        Đây là hàm hiển thị danh sách user
-    */
     public function index() {
 
+        $users = (new User)->allUser();
+        $role = (new Role)->all();
+        $account_status = (new AccountStatus)->all();
         
-
-        $users = (new User)->all();
-        
-        $this->renderAdmin('users', ['users' => $users]);
+        $this->renderAdmin('users', ['users' => $users, 'role' => $role, 'account_status' => $account_status]);
     }
 
     public function delete() {
