@@ -13,7 +13,8 @@ class HomeController extends Controller
 {
     public function home() {
       
-        (new Model())->login();
+        (new User())->login();
+      
         (new User())->register();
       
         $this->render('home',);

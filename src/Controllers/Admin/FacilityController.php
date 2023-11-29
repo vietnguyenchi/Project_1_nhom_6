@@ -31,7 +31,7 @@ class FacilityController extends Controller {
             header('Location: /admin/facilities');
         }
 
-        // Xóa
+        // sửa
         if (isset($_POST['update_facility'])) {
             $data = [
                 'name' => $_POST['name_update'],

@@ -10,7 +10,7 @@ class AboutController extends Controller
 {
     public function about() {
 
-        (new Model())->login();
+        (new User())->login();
 
         (new User())->register();
 

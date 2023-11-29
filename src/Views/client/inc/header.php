@@ -44,12 +44,12 @@
                     <div class="dropdown">
                         <button class="btn border-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img src="../../../uploads/person-circle.svg" width="25" class="rounded-circle me-1">
+                            <img src="../../..'.$_SESSION['avatar'].'" width="28" class="rounded-circle border border-secondary border-2 me-1">
                             '.$_SESSION['name'].'
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><button class="dropdown-item" type="button">Profile</button></li>
-                            <li><button class="dropdown-item" type="button">Bookings</button></li>
+                            <li><a href="/profile" class="dropdown-item" type="button">Profile</a></li>
+                            <li><a href="#" class="dropdown-item" type="button">Bookings</a></li>
                             <li><a href="/logout" class="dropdown-item" type="button">Logout</a></li>
                         </ul>
                     </div>
