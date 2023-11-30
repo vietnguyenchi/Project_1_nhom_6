@@ -93,30 +93,6 @@
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
-                                <!-- <tr>
-                                    <td>2</td>
-                                    <td>Badroom</td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm shadow-none">
-                                            <i class="bi bi-pencil me-1"></i>Edit
-                                        </button>
-                                        <button class="btn btn-danger btn-sm shadow-none">
-                                            <i class="bi bi-trash me-1"></i>Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sofa</td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm shadow-none">
-                                            <i class="bi bi-pencil me-1"></i>Edit
-                                        </button>
-                                        <button class="btn btn-danger btn-sm shadow-none">
-                                            <i class="bi bi-trash me-1"></i>Delete
-                                        </button>
-                                    </td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>
