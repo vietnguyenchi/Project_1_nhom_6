@@ -3,13 +3,17 @@
 
     use Duan1\Nhom6\Controller;
     use Duan1\Nhom6\Models\Room;
+    use Duan1\Nhom6\Models\Facility;
+    use Duan1\Nhom6\Models\Feature;
 
     class RoomController extends Controller {
         public function index() {
              
-            $rooms = (new Room)->all();
+            $facilities = (new Facility)->all();
 
-            $this->renderAdmin('rooms', ['rooms' => $rooms]);
+            $features = (new Feature)->all();
+
+            $this->renderAdmin('rooms', ['facilities' => $facilities, 'features' => $features]);
         }
     }
 ?>

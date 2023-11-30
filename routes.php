@@ -11,6 +11,7 @@ use Duan1\Nhom6\Controllers\Client\FacilityClientController;
 use Duan1\Nhom6\Controllers\Client\AboutController;
 use Duan1\Nhom6\Controllers\Client\ContactController;
 use Duan1\Nhom6\Controllers\Client\ProfileController;
+use Duan1\Nhom6\Controllers\Client\RoomDetailsController;
 use Duan1\Nhom6\Model;
 use Duan1\Nhom6\Router;
 
@@ -23,6 +24,7 @@ $router->addRoute('/facilities', FacilityClientController::class, 'facilities');
 $router->addRoute('/about', AboutController::class, 'about');
 $router->addRoute('/contact', ContactController::class, 'contact');
 $router->addRoute('/profile', ProfileController::class, 'profile');
+$router->addRoute('/room_details', RoomDetailsController::class, 'room_details');
 $router->addRoute('/logout', Model::class, 'logout');
 
 // Dasdboard

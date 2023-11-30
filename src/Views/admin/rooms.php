@@ -17,7 +17,7 @@
                     <div class="modal fade" id="add-room-s" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-lg">
-                            <form id="add_room_form" autocomplete="off">
+                            <form method="POST">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title">Add Room</h5>
@@ -26,27 +26,33 @@
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="" class="form-label fw-bold">Name</label>
-                                                <input type="text" class="form-control shadow-none" require>
+                                                <input type="text" name="name" class="form-control shadow-none"
+                                                    required>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="" class="form-label fw-bold">Area</label>
-                                                <input type="number" min="1" class="form-control shadow-none" require>
+                                                <input type="number" min="15" name="area"
+                                                    class="form-control shadow-none" required>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="" class="form-label fw-bold">Price</label>
-                                                <input type="text" min="1" class="form-control shadow-none" require>
+                                                <input type="text" min="100" name="price"
+                                                    class="form-control shadow-none" required>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="" class="form-label fw-bold">Quantity</label>
-                                                <input type="text" min="1" class="form-control shadow-none" require>
+                                                <input type="text" min="1" name="quantity"
+                                                    class="form-control shadow-none" required>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="" class="form-label fw-bold">Adult (Max.)</label>
-                                                <input type="text" min="1" class="form-control shadow-none" require>
+                                                <input type="text" min="1" name="adult" class="form-control shadow-none"
+                                                    required>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="" class="form-label fw-bold">Children (Max.)</label>
-                                                <input type="text" min="1" class="form-control shadow-none" require>
+                                                <input type="text" min="1" name="children"
+                                                    class="form-control shadow-none" required>
                                             </div>
                                             <div class="col-12 mb-3">
                                                 <label for="" class="form-label fw-bold">Features</label>
@@ -145,10 +151,10 @@
                                 <tr>
                                     <th class="bg-dark text-white" scope="col" width="5%">#</th>
                                     <th class="bg-dark text-white" scope="col">Name</th>
+                                    <th class="bg-dark text-white" scope="col">Area</th>
                                     <th class="bg-dark text-white" scope="col">Guests</th>
                                     <th class="bg-dark text-white" scope="col">Price</th>
                                     <th class="bg-dark text-white" scope="col">Quantity</th>
-                                    <th class="bg-dark text-white" scope="col" width="17%">Status</th>
                                     <th class="bg-dark text-white" scope="col" width="12%">Action</th>
                                 </tr>
                             </thead>
@@ -156,6 +162,7 @@
                                 <tr class="align-middle">
                                     <td>1</td>
                                     <td>Simple room</td>
+                                    <td>25 sq.ft</td>
                                     <td>
                                         <span class="badge rounded-pill bg-light text-dark">
                                             Adult: 8
@@ -166,12 +173,6 @@
                                     </td>
                                     <td>$200</td>
                                     <td>20</td>
-                                    <td>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Active</option>
-                                            <option value="1">Inactive</option>
-                                        </select>
-                                    </td>
                                     <td>
                                         <button class="btn btn-primary btn-sm shadow-none">
                                             <i class="bi bi-pencil-square"></i>
@@ -212,7 +213,8 @@
                                                 </form>
                                                 <div class="container-fluid mt-3"
                                                     style="height: 350px; overflow-y: scroll">
-                                                    <div class="row border border-dark p-2 text-center text-white bg-dark fw-bold">
+                                                    <div
+                                                        class="row border border-dark p-2 text-center text-white bg-dark fw-bold">
                                                         <div class="col-lg-6">Image</div>
                                                         <div class="col-lg-3 text-center">Thumb</div>
                                                         <div class="col-lg-3 text-center">Delete</div>
@@ -223,8 +225,10 @@
                                                                 class="img-fluid p-0">
                                                         </div>
                                                         <div class="col-lg-3 text-center">
-                                                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                                            <label class="btn btn-outline-secondary py-0 px-1" for="btncheck1">
+                                                            <input type="radio" class="btn-check" name="btncheck1"
+                                                                id="btncheck1" autocomplete="off">
+                                                            <label class="btn btn-outline-secondary py-0 px-1"
+                                                                for="btncheck1">
                                                                 <i class="bi bi-check-lg"></i>
                                                             </label>
                                                         </div>
@@ -240,8 +244,10 @@
                                                                 class="img-fluid p-0">
                                                         </div>
                                                         <div class="col-lg-3 text-center">
-                                                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                                            <label class="btn btn-outline-secondary py-0 px-1" for="btncheck1">
+                                                            <input type="radio" class="btn-check" name="btncheck1"
+                                                                id="btncheck2" autocomplete="off">
+                                                            <label class="btn btn-outline-secondary py-0 px-1"
+                                                                for="btncheck2">
                                                                 <i class="bi bi-check-lg"></i>
                                                             </label>
                                                         </div>
@@ -257,8 +263,10 @@
                                                                 class="img-fluid p-0">
                                                         </div>
                                                         <div class="col-lg-3 text-center">
-                                                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                                            <label class="btn btn-outline-secondary py-0 px-1" for="btncheck1">
+                                                            <input type="radio" class="btn-check" name="btncheck1"
+                                                                id="btncheck3" autocomplete="off">
+                                                            <label class="btn btn-outline-secondary py-0 px-1"
+                                                                for="btncheck3">
                                                                 <i class="bi bi-check-lg"></i>
                                                             </label>
                                                         </div>
