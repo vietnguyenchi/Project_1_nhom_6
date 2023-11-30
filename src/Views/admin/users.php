@@ -6,35 +6,79 @@
             <div class="card border-0 shadow-sm sm-4">
                 <div class="card-body">
 
-                    <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
-                        <table class="table table-hover border table-bordered">
+                    <div class="table-responsive-md" style="height: 450px; overflow-y: scroll;">
+                        <table class="text-center table table-hover border table-bordered">
                             <thead class="sticky-top">
                                 <tr>
-                                    <th class="bg-dark text-white" scope="col" width="5%">#</th>
-                                    <th class="bg-dark text-white" scope="col" width="15%">Name</th>
-                                    <th class="bg-dark text-white" scope="col" width="15%">Password</th>
-                                    <th class="bg-dark text-white" scope="col" width="20%">Email</th>
+                                    <th class="bg-dark text-white" scope="col">#</th>
+                                    <th class="bg-dark text-white" scope="col">Name</th>
+                                    <th class="bg-dark text-white" scope="col">Password</th>
+                                    <th class="bg-dark text-white" scope="col">Email</th>
                                     <th class="bg-dark text-white" scope="col">Address</th>
+                                    <th class="bg-dark text-white" scope="col">Nationality</th>
                                     <th class="bg-dark text-white" scope="col">Phone</th>
-                                    <th class="bg-dark text-white" scope="col" width="10%">Action</th>
+                                    <th class="bg-dark text-white" scope="col">Role</th>
+                                    <th class="bg-dark text-white" scope="col">Status</th>
+                                    <th class="bg-dark text-white" scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($users as $user) : ?>
+                                <?php foreach ($users as $user): ?>
                                     <tr>
-                                        <td><?= $user['id'] ?></td>
-                                        <td><?= $user['name'] ?></td>
-                                        <td><?= $user['password'] ?></td>
-                                        <td><?= $user['email'] ?></td>
-                                        <td><?= $user['address'] ?></td>
-                                        <td><?= $user['phone'] ?></td>
                                         <td>
-                                            <button class="btn btn-success btn-sm shadow-none d-block mb-1">
-                                                <i class="bi bi-pencil me-1"></i>Edit
-                                            </button>
-                                            <button class="btn btn-danger btn-sm shadow-none">
-                                                <i class="bi bi-trash me-1"></i>Delete
-                                            </button>
+                                            <?= $user['id'] ?>
+                                        </td>
+                                        <td>
+                                            <img src="../../..<?= $user['avatar'] ?>" width="50"> <br>
+                                            <?= $user['name'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $user['password'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $user['email'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $user['address'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $user['nationality'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $user['phone'] ?>
+                                        </td>
+                                        <td>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select" id="inputGroupSelect01" style="width: 100px;">
+                                                    <?php foreach ($role as $option): ?>
+
+                                                        <option value="<?= $option['id'] ?>" <?= ($user['id_role'] == $option['id']) ? 'selected' : '' ?>>
+                                                            <?= $option['role'] ?>
+                                                        </option>
+
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select" id="inputGroupSelect01" style="width: 100px;">
+                                                    <?php foreach ($account_status as $status): ?>
+
+                                                        <option value="<?= $status['id'] ?>" <?= ($user['id_status'] == $status['id']) ? 'selected' : '' ?>>
+                                                            <?= $status['status'] ?>
+                                                        </option>
+
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="/admin/users/delete?id=<?= $user['id'] ?>"
+                                                class="btn btn-danger btn-sm shadow-none"
+                                                onclick="return confirm('Bạn có chắc chắn xóa?');">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -43,7 +87,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

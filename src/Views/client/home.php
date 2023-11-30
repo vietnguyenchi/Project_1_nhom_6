@@ -1,6 +1,6 @@
 <div class="container-fluid px-lg-4 mt-4">
     <div class="swiper swiper-container">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper d-flex">
             <div class="swiper-slide">
                 <img src="assets/images/carousel/1.png" class="w-100 d-block" />
             </div>

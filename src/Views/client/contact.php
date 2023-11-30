@@ -60,21 +60,21 @@
                     <h5>Send a message</h5>
                     <div class="mt-3">
                         <label class="form-label" style="font-weight: 500;">Name</label>
-                        <input type="text" class="form-control shadow-none">
+                        <input type="text" name="name" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label" style="font-weight: 500;">Email</label>
-                        <input type="email" class="form-control shadow-none">
+                        <input type="email" name="email" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label" style="font-weight: 500;">Subject</label>
-                        <input type="text" class="form-control shadow-none">
+                        <input type="text" name="subject" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label" style="font-weight: 500;">Message</label>
-                        <textarea rows="5" style="resize: none;" class="form-control shadow-none"></textarea>
+                        <textarea rows="5" name="message" style="resize: none;" class="form-control shadow-none"></textarea>
                     </div>
-                    <button type="submit" class="btn text-white custom-bg mt-3">SEND</button>
+                    <button type="submit" name="submit" class="btn text-white custom-bg mt-3">SEND</button>
                 </form>
             </div>
         </div>

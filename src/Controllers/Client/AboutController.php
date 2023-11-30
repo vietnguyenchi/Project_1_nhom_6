@@ -6,14 +6,15 @@ use Duan1\Nhom6\Controller;
 use Duan1\Nhom6\Model;
 use Duan1\Nhom6\Models\User;
 
-class FacilityClientController extends Controller
+class AboutController extends Controller
 {
-    public function facilities() {
+    public function about() {
 
         (new User())->login();
 
         (new User())->register();
-        
-        $this->render('facilities');
+
+        $this->render('about');
     }
+
 }
