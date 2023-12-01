@@ -7,7 +7,7 @@
         protected $table = 'facilities';
 
         protected $columns = [
-            'name',
+            'name_facility',
             'image',
             'description'
         ];

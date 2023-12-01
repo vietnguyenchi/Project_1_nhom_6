@@ -10,7 +10,7 @@ class FacilityController extends Controller {
         // Thêm
         if (isset($_POST['add_facility'])) {
             $data = [
-                'name' => $_POST['facility_name'],
+                'name_facility' => $_POST['facility_name'],
                 'description' => $_POST['description'],
             ];
 
@@ -34,7 +34,7 @@ class FacilityController extends Controller {
         // sửa
         if (isset($_POST['update_facility'])) {
             $data = [
-                'name' => $_POST['name_update'],
+                'name_facility' => $_POST['name_update'],
                 'description' => $_POST['desc_update'],
             ];
 

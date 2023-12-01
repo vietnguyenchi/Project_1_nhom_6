@@ -7,7 +7,7 @@ use Duan1\Nhom6\Model;
 class User extends Model {
     protected $table = 'users';
     protected $columns = [
-        'name',
+        'name_user',
         'password',
         'email',
         'phone',
@@ -82,12 +82,12 @@ class User extends Model {
             if ($data != '') {
                 if (filter_var($data, FILTER_VALIDATE_EMAIL)) {
                     $_SESSION['email'] = $data['email'];
-                    $_SESSION['name'] = $data['name'];
+                    $_SESSION['name'] = $data['name_user'];
                     $_SESSION['avatar'] = $data['avatar'];
 
                 } else {
                     $_SESSION['phone'] = $data['phone'];
-                    $_SESSION['name'] = $data['name'];
+                    $_SESSION['name'] = $data['name_user'];
                     $_SESSION['avatar'] = $data['avatar'];
 
                 }
@@ -149,7 +149,7 @@ class User extends Model {
                     
                 }
                 $data = [
-                    'name' => $_POST['name'],
+                    'name_user' => $_POST['name'],
                     'email' => $email,
                     'phone' => $phone,
                     'address' => null,
@@ -165,7 +165,7 @@ class User extends Model {
                 $_SESSION['email'] = $data['email'];
                 $_SESSION['phone'] = $data['phone'];
                 $_SESSION['avatar'] = $data['avatar'];
-                $_SESSION['name'] = $data['name'];
+                $_SESSION['name'] = $data['name_user'];
     
     
                 header('Location: /');

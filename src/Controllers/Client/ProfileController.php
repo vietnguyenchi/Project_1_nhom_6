@@ -54,7 +54,7 @@ class ProfileController extends Controller
                 } else {
 
                     $data = [
-                        'name' => $_POST['name'],
+                        'name_user' => $_POST['name'],
                         'password' => $user['password'],
                         'phone' => $_POST['phone'],
                         'email' => $_POST['email'],
@@ -88,7 +88,7 @@ class ProfileController extends Controller
             $user = (new User)->findOne($_POST['user_id']);
 
             $data = [
-                'name' => $user['name'],
+                'name_user' => $user['name_user'],
                 'password' => $user['password'],
                 'phone' => $user['phone'],
                 'email' => $user['email'],
@@ -155,7 +155,7 @@ class ProfileController extends Controller
                 } else {
 
                     $data = [
-                        'name' => $user['name'],
+                        'name_user' => $user['name_user'],
                         'password' => $password,
                         'phone' => $user['phone'],
                         'email' => $user['email'],

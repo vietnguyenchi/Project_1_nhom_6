@@ -10,7 +10,7 @@
 
         // Tạo array $columns đề lưu các cột trong bảng
         protected $columns = [
-            'name'
+            'name_feature'
         ];
     }
 ?>

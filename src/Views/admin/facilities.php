@@ -68,7 +68,7 @@
                                         </td>
                                         <td><img src="<?= $facility['image'] ?>" width="80"></td>
                                         <td>
-                                            <?= $facility['name'] ?>
+                                            <?= $facility['name_facility'] ?>
                                         </td>
                                         <td>
                                             <?= $facility['description'] ?>
@@ -98,7 +98,7 @@
                                                             <label class="form-label fw-bold">Name</label>
                                                             <input name="name_update" type="text"
                                                                 class="form-control shadow-none"
-                                                                value="<?= $facility['name'] ?>" required>
+                                                                value="<?= $facility['name_facility'] ?>" required>
                                                             <input type="hidden" name="facility_id" value="<?= $facility['id'] ?>">
                                                         </div>
                                                         <div class="mb-3">

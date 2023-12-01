@@ -10,7 +10,7 @@
             // Thêm 
             if (isset($_POST['feature_name'])) {
                 $data = [
-                    'name' => $_POST['feature_name'],
+                    'name_feature' => $_POST['feature_name'],
                 ];
 
                 (new Feature())->insert($data);
@@ -21,7 +21,7 @@
             // Sửa 
             if (isset($_POST["update_feature"])) { 
                 $data = [
-                    'name' => $_POST['name_update']
+                    'name_feature' => $_POST['name_update']
                 ];
                 
 

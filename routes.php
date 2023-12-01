@@ -44,3 +44,5 @@ $router->addRoute('/admin/facilities/delete', FacilityController::class, 'delete
 
 // Room
 $router->addRoute('/admin/rooms', RoomController::class, 'index');
+$router->addRoute('/admin/rooms/delete', RoomController::class, 'deleteRoom');
+$router->addRoute('/admin/rooms/delete_image', RoomController::class, 'deleteImage');

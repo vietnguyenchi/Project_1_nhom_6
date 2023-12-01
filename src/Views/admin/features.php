@@ -54,7 +54,7 @@
                                             <?= $feature['id'] ?>
                                         </td>
                                         <td>
-                                            <?= $feature['name'] ?>
+                                            <?= $feature['name_feature'] ?>
                                         </td>
                                         <td>
                                             <button class="btn btn-success btn-sm shadow-none" data-bs-toggle="modal"
@@ -79,7 +79,7 @@
                                                         <div class="mb-3">
                                                             <label class="form-label fw-bold">Name</label>
                                                             <input type="hidden" name="feature_id" value="<?= $feature['id'] ?>">
-                                                            <input type="text" name="name_update" class="form-control shadow-none" value="<?= $feature['name'] ?>" required>
+                                                            <input type="text" name="name_update" class="form-control shadow-none" value="<?= $feature['name_feature'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">

@@ -13,12 +13,11 @@
                                     <th class="bg-dark text-white" scope="col">#</th>
                                     <th class="bg-dark text-white" scope="col">Name</th>
                                     <th class="bg-dark text-white" scope="col">Password</th>
-                                    <th class="bg-dark text-white" scope="col">Email</th>
+                                    <th class="bg-dark text-white" scope="col">Email / Phone number</th>
                                     <th class="bg-dark text-white" scope="col">Address</th>
                                     <th class="bg-dark text-white" scope="col">Nationality</th>
-                                    <th class="bg-dark text-white" scope="col">Phone</th>
-                                    <th class="bg-dark text-white" scope="col">Role</th>
-                                    <th class="bg-dark text-white" scope="col">Status</th>
+                                    <th class="bg-dark text-white" scope="col" width="170px">Role</th>
+                                    <th class="bg-dark text-white" scope="col" width="170px">Status</th>
                                     <th class="bg-dark text-white" scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -30,22 +29,20 @@
                                         </td>
                                         <td>
                                             <img src="../../..<?= $user['avatar'] ?>" width="50"> <br>
-                                            <?= $user['name'] ?>
+                                            <?= $user['name_user'] ?>
                                         </td>
                                         <td>
                                             <?= $user['password'] ?>
                                         </td>
                                         <td>
-                                            <?= $user['email'] ?>
+                                            <p><?= $user['email'] ?></p>
+                                            <p><?= $user['phone'] ?></p>
                                         </td>
                                         <td>
                                             <?= $user['address'] ?>
                                         </td>
                                         <td>
                                             <?= $user['nationality'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $user['phone'] ?>
                                         </td>
                                         <td>
                                             <div class="input-group mb-3">
