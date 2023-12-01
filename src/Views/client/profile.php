@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Name</label>
-                            <input type="text" name="name" value="<?= $users['name'] ?>" class="form-control shadow-none">
+                            <input type="text" name="name" value="<?= $users['name_user'] ?>" class="form-control shadow-none">
                             <input type="hidden" name="user_id" value="<?= $users['id'] ?>">
                         </div>
                         <div class="col-md-4 mb-3">
