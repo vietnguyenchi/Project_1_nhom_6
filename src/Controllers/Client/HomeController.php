@@ -3,6 +3,7 @@
 namespace Duan1\Nhom6\Controllers\Client;
 
 use Duan1\Nhom6\Controller;
+
 use Duan1\Nhom6\Model;
 use Duan1\Nhom6\Models\Feature;
 use Duan1\Nhom6\Models\Facility;
@@ -11,6 +12,7 @@ use Duan1\Nhom6\Models\Room;
 use Duan1\Nhom6\Models\ImageRoom;
 use Duan1\Nhom6\Models\RoomFeatures;
 use Duan1\Nhom6\Models\RoomFacilities;
+
 
 
 class HomeController extends Controller
@@ -39,5 +41,6 @@ class HomeController extends Controller
                 'room_facilities' => $room_facilities,
             ]
         );
+
     }
 }
