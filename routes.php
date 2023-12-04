@@ -9,9 +9,13 @@ use Duan1\Nhom6\Controllers\Client\HomeController;
 use Duan1\Nhom6\Controllers\Client\RoomClientController;
 use Duan1\Nhom6\Controllers\Client\FacilityClientController;
 use Duan1\Nhom6\Controllers\Client\AboutController;
+use Duan1\Nhom6\Controllers\Client\ConfirmBookingController;
+use Duan1\Nhom6\Controllers\Client\BookingsController;
 use Duan1\Nhom6\Controllers\Client\ContactController;
 use Duan1\Nhom6\Controllers\Client\ProfileController;
 use Duan1\Nhom6\Controllers\Client\RoomDetailsController;
+use Duan1\Nhom6\Controllers\Client\BillController;
+use Duan1\Nhom6\Controllers\Client\PayStatus;
 use Duan1\Nhom6\Model;
 use Duan1\Nhom6\Router;
 
@@ -25,8 +29,13 @@ $router->addRoute('/about', AboutController::class, 'about');
 $router->addRoute('/contact', ContactController::class, 'contact');
 $router->addRoute('/profile', ProfileController::class, 'profile');
 $router->addRoute('/room_details', RoomDetailsController::class, 'room_details');
+$router->addRoute('/confirm_booking', ConfirmBookingController::class, 'confirm_booking');
+$router->addRoute('/bookings', BookingsController::class, 'bookings');
+$router->addRoute('/bills', BillController::class, 'bills');
+$router->addRoute('/pay_status', PayStatus::class, 'payStatus');
 $router->addRoute('/logout', Model::class, 'logout');
 
+// Admin
 // Dasdboard
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 

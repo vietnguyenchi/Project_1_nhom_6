@@ -71,3 +71,37 @@
         },
     });
 </script>
+
+<script>
+    let selectAll = document.getElementById('selectAll');
+    let checkboxes = document.querySelectorAll('#table input[type="checkbox"]');
+
+    selectAll.addEventListener('click', function () {
+        if (this.checked) {
+            checkboxes.forEach((box) => {
+                box.checked = true;
+            })
+        } else {
+            checkboxes.forEach((box) => {
+                box.checked = 0;
+            })
+        }
+    });
+
+    let total = 0;
+    let hiddenPrice = document.getElementById('hiddenPrice');
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+                total += parseInt(checkbox.value);
+            } else {
+                checkbox.nextSibling.checked = 0;
+                total -= parseInt(checkbox.value);
+            }
+
+            document.getElementById('totalPrice').innerHTML = `$${total}`;
+            hiddenPrice.getAttribute('id') = total;
+        });
+    });
+</script>

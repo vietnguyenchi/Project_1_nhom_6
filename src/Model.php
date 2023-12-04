@@ -170,6 +170,18 @@ class Model
         alert;
     }
 
+    public function checkLogin() {
+        if(empty($_SESSION['name'])) {
+
+            (new Model)->alert('error', 'Please log in before booking');
+
+        } else {
+
+            header('Location: /confirm_booking?id='.$_GET['id'].'');
+            
+        }
+    }
+
 
     public function logout()
     {
