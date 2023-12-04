@@ -49,7 +49,8 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a href="/profile" class="dropdown-item" type="button">Profile</a></li>
-                            <li><a href="#" class="dropdown-item" type="button">Bookings</a></li>
+                            <li><a href="/bookings" class="dropdown-item" type="button">Bookings</a></li>
+                            <li><a href="/bills" class="dropdown-item" type="button">Bills</a></li>
                             <li><a href="/logout" class="dropdown-item" type="button">Logout</a></li>
                         </ul>
                     </div>

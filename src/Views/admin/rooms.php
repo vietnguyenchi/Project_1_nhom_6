@@ -30,7 +30,7 @@
                                                     requiredd>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                                <label for="" class="form-label fw-bold">Area</label>
+                                                <label for="" class="form-label fw-bold">Area (m&#178)</label>
                                                 <input type="number" min="15" name="area"
                                                     class="form-control shadow-none" requiredd>
                                             </div>
@@ -113,8 +113,8 @@
                                     <th class="bg-dark text-white" scope="col">Guests</th>
                                     <th class="bg-dark text-white" scope="col">Price</th>
                                     <th class="bg-dark text-white" scope="col" width="8%">Quantity</th>
-                                    <th class="bg-dark text-white" scope="col">Features</th>
-                                    <th class="bg-dark text-white" scope="col">Facilities</th>
+                                    <!-- <th class="bg-dark text-white" scope="col">Features</th>
+                                    <th class="bg-dark text-white" scope="col">Facilities</th> -->
                                     <th class="bg-dark text-white" scope="col" width="12%">Action</th>
                                 </tr>
                             </thead>
@@ -127,15 +127,14 @@
                                         <td>
                                             <?= $room['name'] ?>
                                         <td>
-                                            <span class="badge rounded-pill bg-light text-dark">
-                                                <?= $room['area'] ?>
-                                                sq.ft
-                                            </span>
+                                            <!-- <span class="badge rounded-pill bg-light text-dark">
+                                            </span> -->
+                                            <?= $room['area'] ?> m&#178
                                         </td>
                                         <td>
                                             <span class="badge rounded-pill bg-light text-dark">
                                                 Adult:
-                                                <?= $room['max_adult'] ?>
+                                                <?= $room['max_adult']  ?>
                                             </span> <br>
                                             <span class="badge rounded-pill bg-light text-dark">
                                                 Children:
@@ -149,7 +148,7 @@
                                         <td>
                                             <?= $room['quantity'] ?>
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             <?php foreach ($room_features as $feature): ?>
 
                                                 <?php
@@ -178,7 +177,7 @@
                                                 ?>
 
                                             <?php endforeach; ?>
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <button class="btn btn-primary btn-sm shadow-none" data-bs-toggle="modal"
                                                 data-bs-target="#update_room<?= $room['id_rooms'] ?>">
@@ -322,9 +321,9 @@
                                                                 <label>Add Image</label>
                                                                 <input type="file" name="image_room"
                                                                     accept=".jpg, .png, .webp, .jpeg"
-                                                                    class="form-control shadow-none mt-1">
+                                                                    class="form-control shadow-none mt-1" multiple>
                                                                 <input type="hidden" name="id_room_image"
-                                                                    value="<?= $room['id_rooms'] ?>" required>
+                                                                    value="<?= $room['id_rooms'] ?>">
                                                             </div>
                                                             <div class="col-1">
                                                                 <button type="submit" name="add_image"

@@ -38,7 +38,22 @@
 
         }
 
+        public function roomHome() {
+
+            $sql = "SELECT * FROM rooms ORDER BY rooms.id LIMIT 3";
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->execute();
+
+            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+            return $stmt->fetchAll();
+
+        }
+
         public function newRoom() {
+
             $sql = "SELECT MAX(id) AS max_id FROM rooms";
 
             $stmt = $this->conn->prepare($sql);
