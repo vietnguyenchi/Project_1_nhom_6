@@ -52,17 +52,16 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="" class="form-label">Adult</label>
-                                <input type="number" name="adult"
-                                    class="form-control shadow-none" required>
+                                <input type="number" name="adult" class="form-control shadow-none" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="" class="form-label">Children</label>
-                                <input type="number" name="children"
-                                    class="form-control shadow-none" required>
+                                <input type="number" name="children" class="form-control shadow-none" required>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="" class="form-label">Message</label>
-                                <textarea name="message" class="form-control shadow-none text-start" rows="1"></textarea>
+                                <textarea name="message" class="form-control shadow-none text-start"
+                                    rows="1"></textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="" class="form-label">Check-in</label>
@@ -74,8 +73,8 @@
                             </div>
                             <h6 class="mb-3 text-danger" id="pay_info">Provide check-in & check-out date !</h6>
                             <div class="col-md-6">
-                                <button name="payUrl" type="submit"
-                                    class="btn w-100 fw-medium text-white custom-bg shadow-none mb-1">
+                                <button type="button" class="btn w-100 fw-medium text-white custom-bg shadow-none mb-1"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="bi bi-credit-card"></i>
                                     PAY NOW
                                 </button>
@@ -90,6 +89,50 @@
                                     </svg>
                                     SAVE
                                 </button>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Select payment method</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="row m-0">
+                                                <div class="col-lg-6 col-md-12 mb-3">
+                                                    <div class="card">
+                                                        <button class="btn custom-bg text-white fw-medium" type="submit" name="payUrl">Momo</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-12 mb-3">
+                                                    <div class="card">
+                                                        <button class="btn custom-bg text-white fw-medium" type="submit" name="">VNpay</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-12 mb-3">
+                                                    <div class="card">
+                                                        <button class="btn custom-bg text-white fw-medium" type="submit" name="">ViettelPay</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-12 mb-3">
+                                                    <div class="card">
+                                                        <button class="btn custom-bg text-white fw-medium" type="submit" name="">ZaloPay</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
