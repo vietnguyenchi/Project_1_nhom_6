@@ -86,7 +86,6 @@
                             }
                         }
                     ?>
-                    
                     <div class="card-body">
                         <h5>
                             <?= $room['name'] ?>
