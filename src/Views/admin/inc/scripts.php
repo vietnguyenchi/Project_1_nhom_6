@@ -4,7 +4,7 @@
 <script>
     function setActive() {
         let navbar = document.getElementById("dashboard-menu");
-        let a_tags =navbar.getElementsByTagName('a');
+        let a_tags = navbar.getElementsByTagName('a');
 
         for (let i = 0; i < a_tags.length; i++) {
             let file = a_tags[i].href.split('/').pop();
@@ -15,4 +15,14 @@
         }
     }
     setActive();
+
+    let today = new Date();
+
+    let day = today.getDate();
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+
+    let formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
+    // document.getElementById("check_out").min = formattedDate;
 </script>

@@ -110,7 +110,7 @@
                                     <th class="bg-dark text-white" scope="col" width="5%">#</th>
                                     <th class="bg-dark text-white" scope="col">Name</th>
                                     <th class="bg-dark text-white" scope="col">Area</th>
-                                    <th class="bg-dark text-white" scope="col">Guests</th>
+                                    <th class="bg-dark text-white" scope="col">Capacity</th>
                                     <th class="bg-dark text-white" scope="col">Price</th>
                                     <th class="bg-dark text-white" scope="col" width="8%">Quantity</th>
                                     <!-- <th class="bg-dark text-white" scope="col">Features</th>
@@ -119,10 +119,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($rooms as $room): ?>
+                                <?php foreach ($rooms as $index => $room): ?>
                                     <tr class="align-middle fs-5 fw-medium">
                                         <td>
-                                            <?= $room['id_rooms'] ?>
+                                            <?= $index + 1 ?>
                                         </td>
                                         <td>
                                             <?= $room['name'] ?>

@@ -28,8 +28,8 @@
                 <h5>
                     <?= $room['name'] ?>
                 </h5>
-                <h6>$
-                    <?= $room['price'] ?> per night
+                <h6>
+                    <?= number_format($room['price'], 0, ',', ',') ?><sup>vnd</sup> per night
                 </h6>
             </div>
         </div>
@@ -52,11 +52,11 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="" class="form-label">Adult</label>
-                                <input type="number" name="adult" class="form-control shadow-none" required>
+                                <input type="number" name="adult" max="<?= $room['max_adult'] ?>" class="form-control shadow-none" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="" class="form-label">Children</label>
-                                <input type="number" name="children" class="form-control shadow-none" required>
+                                <input type="number" name="children" max="<?= $room['max_children'] ?>" class="form-control shadow-none" required>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="" class="form-label">Message</label>

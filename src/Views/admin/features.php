@@ -48,10 +48,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($features as $feature): ?>
+                                <?php foreach ($features as $index => $feature): ?>
                                     <tr>
                                         <td>
-                                            <?= $feature['id'] ?>
+                                            <?= $index + 1 ?>
                                         </td>
                                         <td>
                                             <?= $feature['name_feature'] ?>

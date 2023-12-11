@@ -22,10 +22,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($users as $user): ?>
+                                <?php foreach ($users as $index => $user): ?>
                                     <tr>
                                         <td>
-                                            <?= $user['id'] ?>
+                                            <?= $index + 1 ?>
                                         </td>
                                         <td>
                                             <img src="../../..<?= $user['avatar'] ?>" width="50"> <br>

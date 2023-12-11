@@ -21,8 +21,8 @@
             'signature',
         ];
 
-        public function findBill($partnerCode) {
-            $sql = "SELECT * FROM momo WHERE partnerCode = '$partnerCode'";
+        public function findBill($orderId) {
+            $sql = "SELECT * FROM momo WHERE orderId = '$orderId'";
 
             $stmt = $this->conn->prepare($sql);
 

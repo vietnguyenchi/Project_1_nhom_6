@@ -61,10 +61,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($facilities as $facility): ?>
+                                <?php foreach ($facilities as $index => $facility): ?>
                                     <tr>
                                         <td>
-                                            <?= $facility['id'] ?>
+                                            <?= $index + 1 ?>
                                         </td>
                                         <td><img src="<?= $facility['image'] ?>" width="80"></td>
                                         <td>

@@ -74,33 +74,54 @@
 
 <script>
     let selectAll = document.getElementById('selectAll');
-    let checkboxes = document.querySelectorAll('#table input[type="checkbox"]');
+    let checkboxes = document.querySelectorAll('#table .btn-check');
+    let total = 0;
+    let bookings = 0;
+    let hiddenPrice = document.getElementById('hiddenPrice');
 
-    selectAll.addEventListener('click', function () {
+    selectAll.addEventListener('change', function () {
         if (this.checked) {
             checkboxes.forEach((box) => {
-                box.checked = true;
+                if (box.checked) {
+                    total = total;
+                } else {
+                    box.checked = true;
+                    box.previousElementSibling.checked = true;
+                    total += parseInt(box.value);
+                    bookings++;
+                }
             })
         } else {
             checkboxes.forEach((box) => {
                 box.checked = 0;
+                box.previousElementSibling.checked = 0;
+                total -= parseInt(box.value);
+                bookings--;
             })
         }
+        let formattedNumber = total.toLocaleString('en-US', { maximumFractionDigits: 0 });
+        formattedNumber = formattedNumber.replace(/,/g, '.'); 
+        document.getElementById('totalPrice').innerHTML = `${formattedNumber}<sup>vnd</sup>`;
+        document.getElementById('totalBooking').innerHTML = bookings;
+        hiddenPrice.getAttribute('id') = total;
     });
-
-    let total = 0;
-    let hiddenPrice = document.getElementById('hiddenPrice');
 
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener('change', function () {
             if (checkbox.checked) {
+                checkbox.previousElementSibling.checked = true;
                 total += parseInt(checkbox.value);
+                bookings++;
             } else {
-                checkbox.nextSibling.checked = 0;
+                checkbox.previousElementSibling.checked = 0;
                 total -= parseInt(checkbox.value);
+                bookings--;
             }
 
-            document.getElementById('totalPrice').innerHTML = `$${total}`;
+            let formattedNumber = total.toLocaleString('en-US', { maximumFractionDigits: 0 });
+            formattedNumber = formattedNumber.replace(/,/g, '.'); 
+            document.getElementById('totalPrice').innerHTML = `${formattedNumber}<sup>vnd</sup>`;
+            document.getElementById('totalBooking').innerHTML = bookings;
             hiddenPrice.getAttribute('id') = total;
         });
     });
