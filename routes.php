@@ -5,6 +5,10 @@ use Duan1\Nhom6\Controllers\Admin\UserController;
 use Duan1\Nhom6\Controllers\Admin\DashboardController;
 use Duan1\Nhom6\Controllers\Admin\FacilityController;
 use Duan1\Nhom6\Controllers\Admin\FeatureController;
+use Duan1\Nhom6\Controllers\Admin\NewBookingController;
+use Duan1\Nhom6\Controllers\Admin\RefundBookingController;
+use Duan1\Nhom6\Controllers\Admin\RoomKeyController;
+use Duan1\Nhom6\Controllers\Admin\BillAdminController;
 use Duan1\Nhom6\Controllers\Client\HomeController;
 use Duan1\Nhom6\Controllers\Client\RoomClientController;
 use Duan1\Nhom6\Controllers\Client\FacilityClientController;
@@ -22,21 +26,43 @@ use Duan1\Nhom6\Router;
 $router = new Router();
 
 // Client
+// Home
 $router->addRoute('/', HomeController::class, 'home');
+
+// Rooms
 $router->addRoute('/rooms', RoomClientController::class, 'rooms');
+
+// Facilites
 $router->addRoute('/facilities', FacilityClientController::class, 'facilities');
+
+// About us
 $router->addRoute('/about', AboutController::class, 'about');
+
+// Contact
 $router->addRoute('/contact', ContactController::class, 'contact');
+
+// Profile
 $router->addRoute('/profile', ProfileController::class, 'profile');
-$router->addRoute('/room_details', RoomDetailsController::class, 'room_details');
-$router->addRoute('/confirm_booking', ConfirmBookingController::class, 'confirm_booking');
-$router->addRoute('/bookings', BookingsController::class, 'bookings');
-$router->addRoute('/bills', BillController::class, 'bills');
-$router->addRoute('/pay_status', PayStatus::class, 'payStatus');
 $router->addRoute('/logout', Model::class, 'logout');
 
+// Room details
+$router->addRoute('/room_details', RoomDetailsController::class, 'room_details');
+
+// Confirm booking
+$router->addRoute('/confirm_booking', ConfirmBookingController::class, 'confirm_booking');
+
+// Bookings
+$router->addRoute('/bookings', BookingsController::class, 'bookings');
+$router->addRoute('/bookings/deleteBooking', BookingsController::class, 'deleteBooking');
+
+// Bills
+$router->addRoute('/bills', BillController::class, 'bills');
+
+// Payment status
+$router->addRoute('/pay_status', PayStatus::class, 'payStatus');
+
 // Admin
-// Dasdboard
+// Dashboard
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
 // Users
@@ -55,3 +81,15 @@ $router->addRoute('/admin/facilities/delete', FacilityController::class, 'delete
 $router->addRoute('/admin/rooms', RoomController::class, 'index');
 $router->addRoute('/admin/rooms/delete', RoomController::class, 'deleteRoom');
 $router->addRoute('/admin/rooms/delete_image', RoomController::class, 'deleteImage');
+
+// New Bookings
+$router->addRoute('/admin/new_bookings', NewBookingController::class, 'index');
+
+// Refund Bookings
+$router->addRoute('/admin/refund_bookings', RefundBookingController::class, 'index');
+
+// Room keys
+$router->addRoute('/admin/room_keys', RoomKeyController::class, 'index');
+
+// Bills
+$router->addRoute('/admin/bills', BillAdminController::class, 'index');

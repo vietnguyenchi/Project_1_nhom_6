@@ -8,9 +8,11 @@ class BillTransaction extends Model
     protected $table = 'bill_transaction';
 
     protected $columns = [
+        'id_user',
         'id_momo',
         'total_price',
         'payment_status',
+        'time'
     ];
 
     public function findBillDetail($id_momo)
@@ -28,11 +30,12 @@ class BillTransaction extends Model
 
     public function allBill()
     {
-        $sql = "SELECT *, bill_transaction.total_price AS totalPrice, bookings.id AS id_booking FROM bill_transaction
+        $sql = "SELECT *, bill_transaction.total_price AS totalPrice, bill_transaction.id AS id_bill FROM bill_transaction
             JOIN momo ON momo.id = bill_transaction.id_momo
-            JOIN bill_bookings ON bill_bookings.id_bill = bill_transaction.id
-            JOIN bookings ON bookings.id = bill_bookings.id_booking
-            ORDER BY bill_transaction.id
+            -- JOIN bill_bookings ON bill_bookings.id_bill = bill_transaction.id
+            -- JOIN bookings ON bookings.id = bill_bookings.id_booking
+            GROUP BY bill_transaction.id
+            ORDER BY bill_transaction.id DESC
             ";
 
         $stmt = $this->conn->prepare($sql);
@@ -43,5 +46,46 @@ class BillTransaction extends Model
 
         return $stmt->fetchAll();
     }
+
+    public function billRecord()
+    {
+        $sql = "SELECT *, bill_transaction.total_price AS price_total, bill_transaction.id AS id_bill FROM bill_transaction
+        JOIN users ON users.id = bill_transaction.id_user
+        JOIN momo ON momo.id = bill_transaction.id_momo
+        -- JOIN bill_bookings ON bill_bookings.id_bill = bill_transaction.id
+        WHERE payment_status != 2 AND payment_status != 7
+        GROUP BY bill_transaction.id
+        ORDER BY bill_transaction.id DESC
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+
+    public function refundBills()
+    {
+        $sql = "SELECT *, bill_transaction.total_price AS price_total, bill_transaction.id AS id_bill FROM bill_transaction
+        JOIN users ON users.id = bill_transaction.id_user
+        JOIN momo ON momo.id = bill_transaction.id_momo
+        -- JOIN bill_bookings ON bill_bookings.id_bill = bill_transaction.id
+        WHERE payment_status = 7
+        GROUP BY bill_transaction.id
+        ORDER BY bill_transaction.id DESC
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+
 }
 ?>

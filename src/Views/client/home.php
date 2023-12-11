@@ -77,51 +77,53 @@
         <?php foreach ($rooms as $room): ?>
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card border-0 shadow" style="max-width: 350px; margin: auto">
-                    <?php 
-                        foreach ($image_room as $image) {
-                            if(($image['id_room'] == $room['id']) && ($image['thumb'] == 1)) {
-                    ?>
-                                <img src="../../..<?= $image['image'] ?>" style="max-height: 200px;" class="card-img-top"/>
                     <?php
-                            }
+                    foreach ($image_room as $image) {
+                        if (($image['id_room'] == $room['id']) && ($image['thumb'] == 1)) {
+                            ?>
+                            <img src="../../..<?= $image['image'] ?>" style="max-height: 200px;" class="card-img-top" />
+                            <?php
                         }
+                    }
                     ?>
                     <div class="card-body">
-                        <h5>
+                        <h5 class="text-warning">
                             <?= $room['name'] ?>
                         </h5>
-                        <h6 class="mb-3">$
-                            <?= $room['price'] ?> per night
+                        <h6 class="mb-3">
+                            <p>
+                                <Span><?= number_format($room['price'], 0, ',', ',') ?><sup>vnd</sup></Span> per night
+                            </p>
                         </h6>
                         <div class="features mb-3">
-                            <h6 class="mb-1">Features</h6>
+                            <h6 class="mb-1 text-success">Features</h6>
                             <?php
-                                foreach ($room_features as $feature) {
-                                    if ($feature['id_room'] == $room['id']) {
-                                        ?>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap lh-base mb-1">
-                                            <?= $feature['name_feature'] ?>
-                                        </span>
+                            foreach ($room_features as $feature) {
+                                if ($feature['id_room'] == $room['id']) {
+                                    ?>
+                                    <span class="badge rounded-pill bg-light text-dark text-wrap lh-base mb-1">
+                                        <?= $feature['name_feature'] ?>
+                                    </span>
                                     <?php
-                                    }
                                 }
+                            }
                             ?>
                         </div>
                         <div class="facilities mb-3">
-                            <h6 class="mb-1">Facilities</h6>
+                            <h6 class="mb-1 text-success">Facilities</h6>
                             <?php
-                                foreach ($room_facilities as $facility) {
-                                    if ($facility['id_room'] == $room['id']) {
-                                        ?>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap lh-base mb-1">
-                                            <?= $facility['name_facility'] ?>
-                                        </span>
+                            foreach ($room_facilities as $facility) {
+                                if ($facility['id_room'] == $room['id']) {
+                                    ?>
+                                    <span class="badge rounded-pill bg-light text-dark text-wrap lh-base mb-1">
+                                        <?= $facility['name_facility'] ?>
+                                    </span>
                                     <?php
-                                    }
                                 }
+                            }
                             ?>
                         </div>
-                        <div class="guests mb-3">
+                        <div class="guests mb-3 text-success">
                             <h6 class="mb-1">Guests</h6>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base">
                                 <?= $room['max_adult'] ?> Adult
@@ -140,8 +142,9 @@
                             </span>
                         </div>
                         <div class="d-flex justify-content-evenly mb-2">
-                            <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-                            <a href="/room_details?id=<?= $room['id'] ?>" class="btn btn-sm btn-outline-dark text-darkshadow-none">More details</a>
+                            <a href="/confirm_booking?id=<?= $room['id'] ?>" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
+                            <a href="/room_details?id=<?= $room['id'] ?>"
+                                class="btn btn-sm btn-outline-dark text-darkshadow-none">More details</a>
                         </div>
                     </div>
                 </div>

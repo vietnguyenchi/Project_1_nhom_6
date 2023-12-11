@@ -64,7 +64,9 @@ class ConfirmBookingController extends Controller
                 'duration_in_day' => $durationInDay,
                 'total_price' => $totalPrice,
                 'booking_status' => 1,
-                'start_date' => $date
+                'start_date' => $date,
+                'presence' => 0,
+                'room_key' => null
             ];
 
             (new ConfirmBooking)->insert($data);
@@ -85,7 +87,7 @@ class ConfirmBookingController extends Controller
 
             $totalPrice = ((int) $room['price']) * ((int) $durationInDay);
 
-            $date = date('y-m-d h-i-s');
+            $date = date('Y-m-d H-i-s');
 
             $data = [
                 'id_room' => $room['id'],
@@ -99,8 +101,10 @@ class ConfirmBookingController extends Controller
                 'check_out' => $_POST['check-out'],
                 'duration_in_day' => $durationInDay,
                 'total_price' => $totalPrice,
-                'booking_status' => 1,
-                'start_date' => $date
+                'booking_status' => 7,
+                'start_date' => $date,
+                'presence' => 0,
+                'room_key' => null
             ];
 
             (new ConfirmBooking)->insert($data);
@@ -113,57 +117,7 @@ class ConfirmBookingController extends Controller
 
             $_SESSION['id_bookings'] = $id_bookings;
 
-            $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
-
-
-            $partnerCode = 'MOMOBKUN20180529';
-            $accessKey = 'klm05TvNBzhg7h7j';
-            $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
-            $orderInfo = "Thanh toán qua MoMo";
-            $amount = $totalPrice;
-            $orderId = time() . "";
-            $redirectUrl = "http://nhom-6.test/pay_status";
-            $ipnUrl = "http://nhom-6.test/pay_status";
-            $extraData = "";
-
-
-            // $partnerCode = $partnerCode;
-            // $accessKey = $accessKey;
-            $serectkey = $secretKey;
-            // $orderId = $orderId; // Mã đơn hàng
-            // $orderInfo = $orderInfo;
-            // $amount = $amount;
-            // $ipnUrl = $ipnUrl;
-            // $redirectUrl = $redirectUrl;
-            // $extraData = $extraData;
-
-            $requestId = time() . "";
-            $requestType = "payWithATM";
-            $extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
-            //before sign HMAC SHA256 signature
-            $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
-            $signature = hash_hmac("sha256", $rawHash, $serectkey);
-            $data = array(
-                'partnerCode' => $partnerCode,
-                'partnerName' => "Test",
-                "storeId" => "MomoTestStore",
-                'requestId' => $requestId,
-                'amount' => $amount,
-                'orderId' => $orderId,
-                'orderInfo' => $orderInfo,
-                'redirectUrl' => $redirectUrl,
-                'ipnUrl' => $ipnUrl,
-                'lang' => 'vi',
-                'extraData' => $extraData,
-                'requestType' => $requestType,
-                'signature' => $signature
-            );
-            $result = (new OnlinePayment)->execPostRequest($endpoint, json_encode($data));
-            $jsonResult = json_decode($result, true);  // decode json
-
-            //Just a example, please check more in there
-
-            header('Location: ' . $jsonResult['payUrl']);
+            (new OnlinePayment)->OnlinePayment($totalPrice);
         }
 
 
