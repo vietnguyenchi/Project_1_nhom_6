@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Duan1\Nhom6\Controllers\Admin;
 
@@ -8,15 +8,15 @@ use Duan1\Nhom6\Models\User;
 use Duan1\Nhom6\Models\BillBookings;
 use Duan1\Nhom6\Models\Room;
 
-class BillAdminController extends Controller {
-
-    public function index() {
-
+class AjaxBillController extends Controller
+{
+    public function index()
+    {
         (new User)->checkRole();
 
         $bills = (new BillTransaction)->billRecord();
 
-        if(isset($_POST['search_bill'])) {
+        if (isset($_POST['search_bill'])) {
 
             $bills = (new BillTransaction)->search_bill($_POST['search_bill']);
 
@@ -25,9 +25,9 @@ class BillAdminController extends Controller {
         $bookings = (new BillBookings)->allBillBooking();
 
         $rooms = (new Room)->all();
-        
-        $this->renderAdmin(
-            "bills",
+
+        $this->renderAuth(
+            "search_bill",
             [
                 "bills" => $bills,
                 "bookings" => $bookings,
@@ -35,5 +35,4 @@ class BillAdminController extends Controller {
             ]
         );
     }
-
 }

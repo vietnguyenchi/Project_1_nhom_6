@@ -52,8 +52,7 @@
             <div class="card mb-4 border-0 shadow-sm rounded-3">
                 <div class="card-body">
                     <h4>
-                        $
-                        <?= $room['price'] ?> per night
+                        <?= number_format($room['price'], 0, ',', '.') ?> <sup>VND</sup> per night
                     </h4>
 
                     <div class="rating mb-3">
@@ -65,7 +64,7 @@
 
 
                     <div class="mb-3">
-                        <h6 class="mb-1">Features</h6>
+                        <h6 class="mb-1 text-success">Features</h6>
                         <?php
                         foreach ($room_features as $feature) {
                             if ($feature['id_room'] == $room['id']) {
@@ -80,12 +79,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <h6 class="mb-1">Facilities</h6>
+                        <h6 class="mb-1 text-success">Facilities</h6>
                         <?php
                         foreach ($room_facilities as $facility) {
                             if ($facility['id_room'] == $room['id']) {
                                 ?>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1">Air
+                                <span class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1">
                                     <?= $facility['name_facility'] ?>
                                 </span>
                                 <?php
@@ -95,7 +94,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <h6 class="mb-1">Guests</h6>
+                        <h6 class="mb-1 text-success">Guests</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1">
                             <?= $room['max_adult'] ?> Adult
                         </span>
@@ -105,7 +104,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <h6 class="mb-1">Area</h6>
+                        <h6 class="mb-1 text-success">Area</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1">
                             <?= $room['area'] ?> m&#178
                         </span>

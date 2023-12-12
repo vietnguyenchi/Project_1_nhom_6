@@ -9,77 +9,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-6 mb-5 px-4">
-            <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-                <div class="d-flex align-items-center mb-2">
-                    <img src="assets/images/facilities/wifi.svg" width="40">
-                    <h5 class="m-0 ms-3"></h5>Wifi</h5>
+        <?php foreach ($facilities as $facility) :?>
+            <div class="col-lg-4 col-md-6 mb-5 px-4">
+                <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="../../..<?= $facility['image'] ?>" width="40">
+                        <h5 class="m-0 ms-3"></h5><?= $facility['name_facility'] ?></h5>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
+                        suscipit sed pariatur debitis repudiandae eligendi est!
+                    </p>
                 </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-                    suscipit sed pariatur debitis repudiandae eligendi est!
-                </p>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-5 px-4">
-            <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-                <div class="d-flex align-items-center mb-2">
-                    <img src="assets/images/facilities/wifi.svg" width="40">
-                    <h5 class="m-0 ms-3"></h5>Wifi</h5>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-                    suscipit sed pariatur debitis repudiandae eligendi est!
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-5 px-4">
-            <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-                <div class="d-flex align-items-center mb-2">
-                    <img src="assets/images/facilities/wifi.svg" width="40">
-                    <h5 class="m-0 ms-3"></h5>Wifi</h5>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-                    suscipit sed pariatur debitis repudiandae eligendi est!
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-5 px-4">
-            <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-                <div class="d-flex align-items-center mb-2">
-                    <img src="assets/images/facilities/wifi.svg" width="40">
-                    <h5 class="m-0 ms-3"></h5>Wifi</h5>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-                    suscipit sed pariatur debitis repudiandae eligendi est!
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-5 px-4">
-            <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-                <div class="d-flex align-items-center mb-2">
-                    <img src="assets/images/facilities/wifi.svg" width="40">
-                    <h5 class="m-0 ms-3"></h5>Wifi</h5>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-                    suscipit sed pariatur debitis repudiandae eligendi est!
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-5 px-4">
-            <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-                <div class="d-flex align-items-center mb-2">
-                    <img src="assets/images/facilities/wifi.svg" width="40">
-                    <h5 class="m-0 ms-3"></h5>Wifi</h5>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-                    suscipit sed pariatur debitis repudiandae eligendi est!
-                </p>
-            </div>
-        </div>
+        <?php endforeach; ?>    
     </div>
 </div>

@@ -59,7 +59,8 @@ class ConfirmBooking extends Model
         return $stmt->fetchAll();
     }
 
-    public function newBookings() {
+    public function newBookings()
+    {
         $sql = "SELECT *, bookings.total_price AS totalPrice, bookings.id AS idBooking, bill_transaction.id AS idBill FROM bookings 
         JOIN rooms ON rooms.id = bookings.id_room
         JOIN bill_bookings ON bill_bookings.id_booking = bookings.id
@@ -76,7 +77,8 @@ class ConfirmBooking extends Model
         return $stmt->fetchAll();
     }
 
-    public function bookingRecords() {
+    public function bookingRecords()
+    {
         $sql = "SELECT *, bookings.total_price AS totalPrice, bookings.id AS idBooking FROM bookings 
         JOIN rooms ON rooms.id = bookings.id_room
         JOIN bill_bookings ON bill_bookings.id_booking = bookings.id
@@ -93,8 +95,40 @@ class ConfirmBooking extends Model
         return $stmt->fetchAll();
     }
 
-    public function checkInBookings() {
+    public function checkInBookings()
+    {
         $sql = "SELECT * FROM bookings WHERE bookings.booking_status = 3";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+
+    public function checkAvailable($id, $check_in, $check_out)
+    {
+        $sql = "SELECT COUNT(*) AS SoPhongBiTrung FROM bookings
+        WHERE id_room = $id 
+        AND (
+                ('$check_in' BETWEEN check_in AND check_out) 
+                OR ('$check_out' BETWEEN  check_in AND check_out)
+            )
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
+
+    public function countNewBookings() {
+        $sql = "SELECT COUNT(*) AS newBookings FROM bookings WHERE booking_status = 7";
 
         $stmt = $this->conn->prepare($sql);
 

@@ -1,5 +1,7 @@
 <?php
 
+use Duan1\Nhom6\Controllers\Admin\LoginController;
+use Duan1\Nhom6\Controllers\Admin\AlertController;
 use Duan1\Nhom6\Controllers\Admin\RoomController;
 use Duan1\Nhom6\Controllers\Admin\UserController;
 use Duan1\Nhom6\Controllers\Admin\DashboardController;
@@ -9,6 +11,8 @@ use Duan1\Nhom6\Controllers\Admin\NewBookingController;
 use Duan1\Nhom6\Controllers\Admin\RefundBookingController;
 use Duan1\Nhom6\Controllers\Admin\RoomKeyController;
 use Duan1\Nhom6\Controllers\Admin\BillAdminController;
+use Duan1\Nhom6\Controllers\Admin\AjaxBillController;
+use Duan1\Nhom6\Controllers\Admin\UserQueryController;
 use Duan1\Nhom6\Controllers\Client\HomeController;
 use Duan1\Nhom6\Controllers\Client\RoomClientController;
 use Duan1\Nhom6\Controllers\Client\FacilityClientController;
@@ -62,6 +66,14 @@ $router->addRoute('/bills', BillController::class, 'bills');
 $router->addRoute('/pay_status', PayStatus::class, 'payStatus');
 
 // Admin
+
+// Ajax
+$router->addRoute('/admin/search_bill', AjaxBillController::class, 'index');
+
+// Login
+$router->addRoute('/admin', LoginController::class, 'index');
+$router->addRoute('/admin/alert', AlertController::class, 'index');
+
 // Dashboard
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
@@ -93,3 +105,6 @@ $router->addRoute('/admin/room_keys', RoomKeyController::class, 'index');
 
 // Bills
 $router->addRoute('/admin/bills', BillAdminController::class, 'index');
+
+// User Queries
+$router->addRoute('/admin/user_queries', UserQueryController::class, 'index');

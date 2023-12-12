@@ -1,5 +1,6 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script>
     function setActive() {
@@ -26,3 +27,30 @@
 
     // document.getElementById("check_out").min = formattedDate;
 </script>
+
+<!-- <script>
+    $(document).ready(function(){
+
+        $("#search_bill").keyup(function(){
+
+            var input = $(this).val();
+
+            if(input != "") {
+                $.ajax({
+                    url:"/admin/search_bill",
+                    method: "POST",
+                    data: {input:input},
+
+                    success:function(data) {
+                        $("#resultBill").html(data);
+                    }
+                });
+
+            } else {
+                $('#resultBill').css("display","none");
+            }
+            
+        });
+
+    });
+</script> -->

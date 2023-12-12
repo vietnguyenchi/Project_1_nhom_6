@@ -11,7 +11,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="card text-center text-success p-3">
                         <h6>New Bookings</h6>
-                        <h1 class="mt-2 mb-0">5</h1>
+                        <h1 class="mt-2 mb-0">7</h1>
                     </div>
                 </a>
             </div>
@@ -19,7 +19,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="card text-center text-danger p-3">
                         <h6>Refund Bookkings</h6>
-                        <h1 class="mt-2 mb-0">5</h1>
+                        <h1 class="mt-2 mb-0">2</h1>
                     </div>
                 </a>
             </div>
@@ -56,21 +56,21 @@
                 <div class="card text-center text-primary p-3">
                     <h6>Total Bookings</h6>
                     <h1 class="mt-2 mb-0">5</h1>
-                    <h4 class="mt-2 mb-0">$2000</h4>
+                    <h4 class="mt-2 mb-0">1.520.000<sup>VND</sup></h4>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card text-center text-success p-3">
                     <h6>Active Bookings</h6>
-                    <h1 class="mt-2 mb-0">0</h1>
-                    <h4 class="mt-2 mb-0">$2000</h4>
+                    <h1 class="mt-2 mb-0">4</h1>
+                    <h4 class="mt-2 mb-0">1.020.000<sup>VND</sup></h4>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card text-center text-danger p-3">
                     <h6>Cancelled Bookings</h6>
-                    <h1 class="mt-2 mb-0">5</h1>
-                    <h4 class="mt-2 mb-0">$2000</h4>
+                    <h1 class="mt-2 mb-0">2</h1>
+                    <h4 class="mt-2 mb-0">320.000<sup>VND</sup></h4>
                 </div>
             </div>
         </div>
@@ -117,19 +117,19 @@
             <div class="col-md-3 mb-4">
                 <div class="card text-center text-success p-3">
                     <h6>Active</h6>
-                    <h1 class="mt-2 mb-0">0</h1>
+                    <h1 class="mt-2 mb-0">5</h1>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card text-center text-warning p-3">
                     <h6>Inactive</h6>
-                    <h1 class="mt-2 mb-0">5</h1>
+                    <h1 class="mt-2 mb-0">0</h1>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card text-center text-danger p-3">
                     <h6>Unverified</h6>
-                    <h1 class="mt-2 mb-0">5</h1>
+                    <h1 class="mt-2 mb-0">0</h1>
                 </div>
             </div>
         </div>

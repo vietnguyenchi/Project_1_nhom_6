@@ -19,4 +19,12 @@ class Controller {
         
         include 'Views/admin/master.php';
     }
+
+    protected function renderAuth($view, $data = []) {
+        $data['view'] = $view;
+
+        extract($data);
+        
+        include 'Views/admin/index.php';
+    }
 }

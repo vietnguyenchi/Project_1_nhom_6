@@ -15,7 +15,7 @@
                                     <th class="bg-dark text-white" scope="col">Subject</th>
                                     <th class="bg-dark text-white" scope="col" width="30%">Message</th>
                                     <th class="bg-dark text-white" scope="col">Date</th>
-                                    <th class="bg-dark text-white" scope="col" width="10%">Action</th>
+                                    <th class="bg-dark text-white" scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,7 +44,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
+                                    <td>3</td>
                                     <td>Chi Viet Nguyen</td>
                                     <td>chiviet296@gmail.com</td>
                                     <td>abcxyz</td>
@@ -56,7 +56,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
+                                    <td>4</td>
                                     <td>Chi Viet Nguyen</td>
                                     <td>chiviet296@gmail.com</td>
                                     <td>abcxyz</td>
