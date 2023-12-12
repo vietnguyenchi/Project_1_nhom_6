@@ -142,8 +142,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            $
-                                            <?= $room['price'] ?>
+                                            <?= number_format($room['price'], 0, ',', '.') ?><sup>VND</sup>
                                         </td>
                                         <td>
                                             <?= $room['quantity'] ?>

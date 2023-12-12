@@ -2,12 +2,15 @@
 namespace Duan1\Nhom6\Controllers\Admin;
 
 use Duan1\Nhom6\Controller;
+use Duan1\Nhom6\Models\User;
 use Duan1\Nhom6\Models\BillTransaction;
 use Duan1\Nhom6\Models\BillBookings;
 use Duan1\Nhom6\Models\Room;
 
 class RefundBookingController extends Controller {
     public function index() {
+
+        (new User)->checkRole();
 
         $bills = (new BillTransaction)->refundBills();
 

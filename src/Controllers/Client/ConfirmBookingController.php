@@ -27,6 +27,7 @@ class ConfirmBookingController extends Controller
 
         $image_room = (new ImageRoom)->all();
 
+
         if (!empty($_SESSION['email'])) {
 
             $user = (new User)->checkExistAccount('email', $_SESSION['email']);
@@ -39,85 +40,103 @@ class ConfirmBookingController extends Controller
 
         if (isset($_POST['save'])) {
 
-            $dayCheckIn_str = $_POST['check-in'];
-            $dayCheckOut_str = $_POST['check-out'];
+            $count = (new ConfirmBooking)->checkAvailable($room['id'], $_POST['check-in'], $_POST['check-out']);
 
-            $dayCheckIn = new DateTime($dayCheckIn_str);
-            $dayCheckOut = new DateTime($dayCheckOut_str);
+            if ((int) $count['SoPhongBiTrung'] < $room['quantity']) {
 
-            $durationInDay = $dayCheckIn->diff($dayCheckOut)->days;
+                $dayCheckIn_str = $_POST['check-in'];
+                $dayCheckOut_str = $_POST['check-out'];
 
-            $totalPrice = ((int) $room['price']) * ((int) $durationInDay);
+                $dayCheckIn = new DateTime($dayCheckIn_str);
+                $dayCheckOut = new DateTime($dayCheckOut_str);
 
-            $date = date('y-m-d h-i-s');
+                $durationInDay = $dayCheckIn->diff($dayCheckOut)->days;
 
-            $data = [
-                'id_room' => $room['id'],
-                'id_user' => $user['id'],
-                'name_guest' => $_POST['name'],
-                'phone_number' => $_POST['phone'],
-                'adult' => $_POST['adult'],
-                'children' => $_POST['children'],
-                'message' => $_POST['message'],
-                'check_in' => $_POST['check-in'],
-                'check_out' => $_POST['check-out'],
-                'duration_in_day' => $durationInDay,
-                'total_price' => $totalPrice,
-                'booking_status' => 1,
-                'start_date' => $date,
-                'presence' => 0,
-                'room_key' => null
-            ];
+                $totalPrice = ((int) $room['price']) * ((int) $durationInDay);
 
-            (new ConfirmBooking)->insert($data);
+                $date = date('y-m-d h-i-s');
 
-            header('Location: confirm_booking?id=' . $room['id'] . '');
+                $data = [
+                    'id_room' => $room['id'],
+                    'id_user' => $user['id'],
+                    'name_guest' => $_POST['name'],
+                    'phone_number' => $_POST['phone'],
+                    'adult' => $_POST['adult'],
+                    'children' => $_POST['children'],
+                    'message' => $_POST['message'],
+                    'check_in' => $_POST['check-in'],
+                    'check_out' => $_POST['check-out'],
+                    'duration_in_day' => $durationInDay,
+                    'total_price' => $totalPrice,
+                    'booking_status' => 1,
+                    'start_date' => $date,
+                    'presence' => 0,
+                    'room_key' => null
+                ];
 
-            (new Model)->alert('success', 'Saved');
+                (new ConfirmBooking)->insert($data);
+
+                // header('Location: confirm_booking?id=' . $room['id'] . '');
+
+                (new Model)->alert('success', 'Saved');
+
+            } else {
+                (new Model)->alert('error', 'There are no more rooms available');
+            }
+
         }
 
         if (isset($_POST['payUrl'])) {
-            $dayCheckIn_str = $_POST['check-in'];
-            $dayCheckOut_str = $_POST['check-out'];
 
-            $dayCheckIn = new DateTime($dayCheckIn_str);
-            $dayCheckOut = new DateTime($dayCheckOut_str);
+            $count = (new ConfirmBooking)->checkAvailable($room['id'], $_POST['check-in'], $_POST['check-out']);
 
-            $durationInDay = $dayCheckIn->diff($dayCheckOut)->days;
+            if ((int) $count['SoPhongBiTrung'] < $room['quantity']) {
+                
+                $dayCheckIn_str = $_POST['check-in'];
+                $dayCheckOut_str = $_POST['check-out'];
 
-            $totalPrice = ((int) $room['price']) * ((int) $durationInDay);
+                $dayCheckIn = new DateTime($dayCheckIn_str);
+                $dayCheckOut = new DateTime($dayCheckOut_str);
 
-            $date = date('Y-m-d H-i-s');
+                $durationInDay = $dayCheckIn->diff($dayCheckOut)->days;
 
-            $data = [
-                'id_room' => $room['id'],
-                'id_user' => $user['id'],
-                'name_guest' => $_POST['name'],
-                'phone_number' => $_POST['phone'],
-                'adult' => $_POST['adult'],
-                'children' => $_POST['children'],
-                'message' => $_POST['message'],
-                'check_in' => $_POST['check-in'],
-                'check_out' => $_POST['check-out'],
-                'duration_in_day' => $durationInDay,
-                'total_price' => $totalPrice,
-                'booking_status' => 7,
-                'start_date' => $date,
-                'presence' => 0,
-                'room_key' => null
-            ];
+                $totalPrice = ((int) $room['price']) * ((int) $durationInDay);
 
-            (new ConfirmBooking)->insert($data);
+                $date = date('Y-m-d H-i-s');
 
-            $booking = (new ConfirmBooking)->findBooking($user['id'], $date);
+                $data = [
+                    'id_room' => $room['id'],
+                    'id_user' => $user['id'],
+                    'name_guest' => $_POST['name'],
+                    'phone_number' => $_POST['phone'],
+                    'adult' => $_POST['adult'],
+                    'children' => $_POST['children'],
+                    'message' => $_POST['message'],
+                    'check_in' => $_POST['check-in'],
+                    'check_out' => $_POST['check-out'],
+                    'duration_in_day' => $durationInDay,
+                    'total_price' => $totalPrice,
+                    'booking_status' => 7,
+                    'start_date' => $date,
+                    'presence' => 0,
+                    'room_key' => null
+                ];
 
-            $id_bookings = [];
+                (new ConfirmBooking)->insert($data);
 
-            array_push($id_bookings, $booking['id']);
+                $booking = (new ConfirmBooking)->findBooking($user['id'], $date);
 
-            $_SESSION['id_bookings'] = $id_bookings;
+                $id_bookings = [];
 
-            (new OnlinePayment)->OnlinePayment($totalPrice);
+                array_push($id_bookings, $booking['id']);
+
+                $_SESSION['id_bookings'] = $id_bookings;
+
+                (new OnlinePayment)->OnlinePayment($totalPrice);
+
+            } else {
+                (new Model)->alert('error', 'There are no more rooms available');
+            }
         }
 
 

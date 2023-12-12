@@ -20,7 +20,7 @@ class User extends Model {
 
     public function allUser()
     {
-        $sql = "SELECT * 
+        $sql = "SELECT *, users.id AS idUser 
         FROM users
         JOIN account_status ON account_status.id = users.id_status
         JOIN role ON users.id_role = role.id
@@ -173,6 +173,18 @@ class User extends Model {
                 (new Model)->alert('success', 'Sign Up Success');
             }
 
+        }
+    }
+
+    public function checkRole() {
+        if(!empty($_SESSION['email'])) {
+            $user = (new User)->checkExistAccount('email', $_SESSION['email']);
+        } else if (!empty($_SESSION['phone'])) {
+            $user = (new User)->checkExistAccount('phone', $_SESSION['phone']);
+        }
+
+        if($user['id_role'] !== 2) {
+            header('Location: /admin/alert');
         }
     }
 }

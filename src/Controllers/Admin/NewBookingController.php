@@ -10,6 +10,8 @@ class NewBookingController extends Controller
 {
     public function index()
     {
+        (new User)->checkRole();
+
         if (isset($_SESSION['email'])) {
             $user = (new User)->checkExistAccount('email', $_SESSION['email']);
         } elseif (isset($_SESSION['phone'])) {

@@ -170,6 +170,19 @@
                                             <option value="Good">Good</option>
                                             <option value="Excellent" selected>Excellent</option>
                                         </select>
+                                        <input type="hidden" name="id_user" value="<?= $bill['id_user'] ?>">
+                                        <?php foreach ($bookings as $booking) {
+                                            if ($booking['id_bill'] == $bill['id_bill']) {
+                                                foreach ($rooms as $room) {
+                                                    if ($room['id'] == $booking['id_room']) {
+                                                        ?>
+                                                        <input type="hidden" name="id_room[]" value="<?= $room['id'] ?>">
+                                                        <?php
+                                                    }
+                                                }
+                                            }
+
+                                        } ?>
                                     </div>
                                     <div class="mb-3">
                                         <label for="message-text" class="col-form-label">Message:</label>

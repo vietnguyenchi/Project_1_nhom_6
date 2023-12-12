@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
+                    <div class="table-responsive-md" style="height: 550px; overflow-y: scroll;">
                         <table class="table table-hover border table-bordered">
                             <thead class="sticky-top">
                                 <tr>

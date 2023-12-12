@@ -5,6 +5,7 @@ namespace Duan1\Nhom6\Controllers\Client;
 use Duan1\Nhom6\Controller;
 use Duan1\Nhom6\Model;
 use Duan1\Nhom6\Models\User;
+use Duan1\Nhom6\Models\Review;
 use Duan1\Nhom6\Models\BillTransaction;
 use Duan1\Nhom6\Models\ConfirmBooking;
 use Duan1\Nhom6\Models\BillBookings;
@@ -44,6 +45,26 @@ class BillController extends Controller
             (new BillTransaction)->update($data, $conditions);
 
             header('Location: /bills');
+        }
+
+        if(isset($_POST['rate'])) {
+
+            $rooms = isset($_POST['id_room']) ? $_POST['id_room'] : [];
+
+            foreach ($rooms as $room) {
+
+                $data = [
+                    'id_user' => $_POST['id_user'],
+                    'id_room' => (int)$room,
+                    'rating' => $_POST['rating'],
+                    'review' => $_POST['review']
+                ];
+
+                (new Review)->insert($data);
+
+            }
+
+            header("Location: bills");
         }
 
 

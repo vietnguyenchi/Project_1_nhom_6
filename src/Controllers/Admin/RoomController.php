@@ -3,6 +3,7 @@ namespace Duan1\Nhom6\Controllers\Admin;
 
 use Duan1\Nhom6\Controller;
 use Duan1\Nhom6\Models\Room;
+use Duan1\Nhom6\Models\User;
 use Duan1\Nhom6\Models\Facility;
 use Duan1\Nhom6\Models\Feature;
 use Duan1\Nhom6\Models\RoomFacilities;
@@ -13,6 +14,8 @@ class RoomController extends Controller
 {
     public function index()
     {
+
+        (new User)->checkRole();
 
         $facilities = (new Facility)->all();
 
